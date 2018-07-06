@@ -1,0 +1,380 @@
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 021
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = ADIANTAMENTO 13o.VARIAVEL
+natRubr_19 = 5504
+tpRubr_20 = 1
+codIncCP_21 = 00
+codIncIRRF_22 = 00
+codIncFGTS_23 = 11
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 022
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = 54-ADICIONAL PERICULOSIDA
+natRubr_19 = 1203
+tpRubr_20 = 1
+codIncCP_21 = 11
+codIncIRRF_22 = 11
+codIncFGTS_23 = 11
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 023
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = 53-ADICIONAL INSALUBRIDAD
+natRubr_19 = 1202
+tpRubr_20 = 1
+codIncCP_21 = 11
+codIncIRRF_22 = 11
+codIncFGTS_23 = 11
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 024
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = 51-COMISSOES
+natRubr_19 = 1202
+tpRubr_20 = 1
+codIncCP_21 = 11
+codIncIRRF_22 = 11
+codIncFGTS_23 = 11
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 025
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = AJUDA DE CUSTO FIXO
+natRubr_19 = 1602
+tpRubr_20 = 1
+codIncCP_21 = 11
+codIncIRRF_22 = 11
+codIncFGTS_23 = 11
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 026
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = SALARIO MATERNIDADE
+natRubr_19 = 4050
+tpRubr_20 = 1
+codIncCP_21 = 11
+codIncIRRF_22 = 11
+codIncFGTS_23 = 11
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 027
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = 95.3 DIFERENCA SALARIO
+natRubr_19 = 1099
+tpRubr_20 = 1
+codIncCP_21 = 11
+codIncIRRF_22 = 11
+codIncFGTS_23 = 11
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 028
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = 69-AVISO PREVIO INDENIZAD
+natRubr_19 = 1099
+tpRubr_20 = 1
+codIncCP_21 = 11
+codIncIRRF_22 = 00
+codIncFGTS_23 = 11
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 029
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = COMPLEMENTO 13o. SALARIO
+natRubr_19 = 5005
+tpRubr_20 = 1
+codIncCP_21 = 12
+codIncIRRF_22 = 12
+codIncFGTS_23 = 11
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 030
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = IND CLS 31 15 DIAS IND IN
+natRubr_19 = 1011
+tpRubr_20 = 1
+codIncCP_21 = 00
+codIncIRRF_22 = 00
+codIncFGTS_23 = 00
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 031
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = 52-GRATIFICAO
+natRubr_19 = 1211
+tpRubr_20 = 1
+codIncCP_21 = 11
+codIncIRRF_22 = 11
+codIncFGTS_23 = 11
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 032
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = VALOR BASE IAPAS OUTROS
+natRubr_19 = 9989
+tpRubr_20 = 4
+codIncCP_21 = 00
+codIncIRRF_22 = 00
+codIncFGTS_23 = 00
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 033
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = ABONO DE FERIAS
+natRubr_19 = 1022
+tpRubr_20 = 1
+codIncCP_21 = 00
+codIncIRRF_22 = 13
+codIncFGTS_23 = 00
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 034
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = 65-FERIAS PROPORC. RESCIS
+natRubr_19 = 6006
+tpRubr_20 = 1
+codIncCP_21 = 00
+codIncIRRF_22 = 13
+codIncFGTS_23 = 00
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 035
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = 66-FERIAS INDENIZADAS
+natRubr_19 = 6007
+tpRubr_20 = 1
+codIncCP_21 = 00
+codIncIRRF_22 = 13
+codIncFGTS_23 = 00
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 036
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = FERIAS
+natRubr_19 = 6007
+tpRubr_20 = 1
+codIncCP_21 = 11
+codIncIRRF_22 = 13
+codIncFGTS_23 = 11
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 037
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = 1/3 DE FERIAS
+natRubr_19 = 1020
+tpRubr_20 = 1
+codIncCP_21 = 11
+codIncIRRF_22 = 13
+codIncFGTS_23 = 11
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 038
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = 68-1/3 DE FERIAS RESCISAO
+natRubr_19 = 6006
+tpRubr_20 = 1
+codIncCP_21 = 00
+codIncIRRF_22 = 13
+codIncFGTS_23 = 00
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 039
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = FGTS 40 % REDC.+ ANTERIOR
+natRubr_19 = 9989
+tpRubr_20 = 4
+codIncCP_21 = 00
+codIncIRRF_22 = 00
+codIncFGTS_23 = 00
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 040
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = FGTS 40 % DEP.+ CM.+ JUR.
+natRubr_19 = 9989
+tpRubr_20 = 4
+codIncCP_21 = 00
+codIncIRRF_22 = 00
+codIncFGTS_23 = 00
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010

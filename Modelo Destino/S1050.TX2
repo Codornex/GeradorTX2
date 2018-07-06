@@ -1,0 +1,700 @@
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 035
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 0540
+hrSaida_18 = 1400
+durJornada_19 = 516
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 60
+iniInterv_24 = 1200
+termInterv_25 = 1300
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 002
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 0545
+hrSaida_18 = 1405
+durJornada_19 = 516
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 60
+iniInterv_24 = 1100
+termInterv_25 = 1200
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 005
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 0545
+hrSaida_18 = 1405
+durJornada_19 = 516
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 60
+iniInterv_24 = 1130
+termInterv_25 = 1230
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 024
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 0545
+hrSaida_18 = 1405
+durJornada_19 = 516
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 60
+iniInterv_24 = 1200
+termInterv_25 = 1300
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 003
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 0545
+hrSaida_18 = 1533
+durJornada_19 = 592
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 60
+iniInterv_24 = 1200
+termInterv_25 = 1300
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 011
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 0550
+hrSaida_18 = 1410
+durJornada_19 = 516
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 60
+iniInterv_24 = 1030
+termInterv_25 = 1130
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 004
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 0550
+hrSaida_18 = 1410
+durJornada_19 = 516
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 60
+iniInterv_24 = 1100
+termInterv_25 = 1200
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 031
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 0550
+hrSaida_18 = 1410
+durJornada_19 = 516
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 0
+iniInterv_24 = 1130
+termInterv_25 = 1210
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 010
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 0550
+hrSaida_18 = 1410
+durJornada_19 = 516
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 60
+iniInterv_24 = 1130
+termInterv_25 = 1230
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 025
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 0550
+hrSaida_18 = 1410
+durJornada_19 = 516
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 60
+iniInterv_24 = 1200
+termInterv_25 = 1300
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 016
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 0600
+hrSaida_18 = 1400
+durJornada_19 = 480
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 0
+iniInterv_24 = 1130
+termInterv_25 = 1200
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 014
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 0600
+hrSaida_18 = 1420
+durJornada_19 = 492
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 60
+iniInterv_24 = 1130
+termInterv_25 = 1230
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 032
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 0600
+hrSaida_18 = 1548
+durJornada_19 = 568
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 60
+iniInterv_24 = 1200
+termInterv_25 = 1300
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 023
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 0700
+hrSaida_18 = 1648
+durJornada_19 = 568
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 60
+iniInterv_24 = 1100
+termInterv_25 = 1200
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 033
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 0700
+hrSaida_18 = 1520
+durJornada_19 = 492
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 60
+iniInterv_24 = 1130
+termInterv_25 = 1230
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 014
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 0700
+hrSaida_18 = 1648
+durJornada_19 = 568
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 60
+iniInterv_24 = 1130
+termInterv_25 = 1230
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 027
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 0700
+hrSaida_18 = 1520
+durJornada_19 = 492
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 60
+iniInterv_24 = 1200
+termInterv_25 = 1300
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 009
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 0700
+hrSaida_18 = 1648
+durJornada_19 = 568
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 60
+iniInterv_24 = 1200
+termInterv_25 = 1300
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 022
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 0700
+hrSaida_18 = 1800
+durJornada_19 = 660
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 60
+iniInterv_24 = 1200
+termInterv_25 = 1300
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 028
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 0700
+hrSaida_18 = 1648
+durJornada_19 = 568
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 60
+iniInterv_24 = 1230
+termInterv_25 = 1330
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 026
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 0700
+hrSaida_18 = 1648
+durJornada_19 = 568
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 60
+iniInterv_24 = 1330
+termInterv_25 = 1430
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 034
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 0712
+hrSaida_18 = 1700
+durJornada_19 = 592
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 60
+iniInterv_24 = 1200
+termInterv_25 = 1300
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 029
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 0800
+hrSaida_18 = 1748
+durJornada_19 = 568
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 60
+iniInterv_24 = 1130
+termInterv_25 = 1230
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 015
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 0800
+hrSaida_18 = 1748
+durJornada_19 = 568
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 60
+iniInterv_24 = 1200
+termInterv_25 = 1300
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 021
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 0800
+hrSaida_18 = 1800
+durJornada_19 = 600
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 60
+iniInterv_24 = 1200
+termInterv_25 = 1300
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 020
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 0800
+hrSaida_18 = 1748
+durJornada_19 = 568
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 60
+iniInterv_24 = 1230
+termInterv_25 = 1330
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 018
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 1340
+hrSaida_18 = 2200
+durJornada_19 = 516
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 60
+iniInterv_24 = 1700
+termInterv_25 = 1800
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 006
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 1340
+hrSaida_18 = 2200
+durJornada_19 = 516
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 60
+iniInterv_24 = 1800
+termInterv_25 = 1900
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 008
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 1340
+hrSaida_18 = 2200
+durJornada_19 = 516
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 60
+iniInterv_24 = 1900
+termInterv_25 = 2000
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 017
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 2200
+hrSaida_18 = 0600
+durJornada_19 = 480
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 60
+iniInterv_24 = 0000
+termInterv_25 = 0100
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 030
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 2200
+hrSaida_18 = 0600
+durJornada_19 = 480
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 60
+iniInterv_24 = 0100
+termInterv_25 = 0200
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 007
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 2200
+hrSaida_18 = 0600
+durJornada_19 = 480
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 60
+iniInterv_24 = 0200
+termInterv_25 = 0300
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 019
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 2200
+hrSaida_18 = 0600
+durJornada_19 = 480
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 60
+iniInterv_24 = 0230
+termInterv_25 = 0330
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 012
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 2200
+hrSaida_18 = 0600
+durJornada_19 = 480
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 60
+iniInterv_24 = 0300
+termInterv_25 = 0400
+SALVARHORARIOINTERVALO_21
+SALVARS1050
+INCLUIRS1050
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codHorContrat_13 = 013
+iniValid_14 = 2018-01
+fimValid_15 = 
+hrEntr_17 = 2200
+hrSaida_18 = 0600
+durJornada_19 = 480
+perHorFlexivel_20 = N
+INCLUIRHORARIOINTERVALO_21
+tpInterv_22 = 1
+durInterv_23 = 60
+iniInterv_24 = 0400
+termInterv_25 = 0500
+SALVARHORARIOINTERVALO_21
+SALVARS1050

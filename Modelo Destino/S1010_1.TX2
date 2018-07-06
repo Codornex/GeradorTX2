@@ -1,0 +1,380 @@
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 001
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = SALARIO BASE
+natRubr_19 = 1000
+tpRubr_20 = 1
+codIncCP_21 = 11
+codIncIRRF_22 = 11
+codIncFGTS_23 = 11
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 002
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = SALARIO HABITACAO
+natRubr_19 = 1805
+tpRubr_20 = 1
+codIncCP_21 = 11
+codIncIRRF_22 = 11
+codIncFGTS_23 = 11
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 003
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = 56-HORA EXTRA A 65 %
+natRubr_19 = 1003
+tpRubr_20 = 1
+codIncCP_21 = 11
+codIncIRRF_22 = 11
+codIncFGTS_23 = 11
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 004
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = 56.1-HORA EXTRA 65% MES A
+natRubr_19 = 1003
+tpRubr_20 = 1
+codIncCP_21 = 11
+codIncIRRF_22 = 11
+codIncFGTS_23 = 11
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 005
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = 56.2 H.EXTRA 100% MES ANT
+natRubr_19 = 1003
+tpRubr_20 = 1
+codIncCP_21 = 11
+codIncIRRF_22 = 11
+codIncFGTS_23 = 11
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 006
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = 56.4-HORA EXTRA A 50 %
+natRubr_19 = 1003
+tpRubr_20 = 1
+codIncCP_21 = 11
+codIncIRRF_22 = 11
+codIncFGTS_23 = 11
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 007
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = 56.5-HORA EXTRA A 85 %
+natRubr_19 = 1003
+tpRubr_20 = 1
+codIncCP_21 = 11
+codIncIRRF_22 = 11
+codIncFGTS_23 = 11
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 008
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = 56.6-HORA EXTRA A 90%
+natRubr_19 = 1003
+tpRubr_20 = 1
+codIncCP_21 = 11
+codIncIRRF_22 = 11
+codIncFGTS_23 = 11
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 009
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = 56.7-HORA EXTRA A 100 %
+natRubr_19 = 1003
+tpRubr_20 = 1
+codIncCP_21 = 11
+codIncIRRF_22 = 11
+codIncFGTS_23 = 11
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 010
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = 55-ADICIONAL NOTURNO
+natRubr_19 = 1205
+tpRubr_20 = 1
+codIncCP_21 = 11
+codIncIRRF_22 = 11
+codIncFGTS_23 = 11
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 011
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = 58-DESCANSO SEM.REMUNERA
+natRubr_19 = 1002
+tpRubr_20 = 1
+codIncCP_21 = 11
+codIncIRRF_22 = 11
+codIncFGTS_23 = 11
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 012
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = SALARIO MATERNIDADE
+natRubr_19 = 4050
+tpRubr_20 = 1
+codIncCP_21 = 11
+codIncIRRF_22 = 11
+codIncFGTS_23 = 11
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 013
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = 62-SAL. FAMILIA PROPORCIO
+natRubr_19 = 1009
+tpRubr_20 = 1
+codIncCP_21 = 00
+codIncIRRF_22 = 00
+codIncFGTS_23 = 00
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 014
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = 62-SALARIO FAMILIA
+natRubr_19 = 1009
+tpRubr_20 = 1
+codIncCP_21 = 00
+codIncIRRF_22 = 00
+codIncFGTS_23 = 00
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 015
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = 13o. SALARIO
+natRubr_19 = 5001
+tpRubr_20 = 1
+codIncCP_21 = 12
+codIncIRRF_22 = 12
+codIncFGTS_23 = 11
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 016
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = 13o. VARIAVEL
+natRubr_19 = 5005
+tpRubr_20 = 1
+codIncCP_21 = 12
+codIncIRRF_22 = 12
+codIncFGTS_23 = 11
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 017
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = 99-CRED.COMPLEMENTO SALAR
+natRubr_19 = 2930
+tpRubr_20 = 1
+codIncCP_21 = 00
+codIncIRRF_22 = 00
+codIncFGTS_23 = 00
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 018
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = ARREDONDAMENTO MES ATUAL
+natRubr_19 = 2999
+tpRubr_20 = 1
+codIncCP_21 = 00
+codIncIRRF_22 = 00
+codIncFGTS_23 = 00
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 019
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = ADIANTAMENTO DE SALARIO
+natRubr_19 = 5501
+tpRubr_20 = 1
+codIncCP_21 = 00
+codIncIRRF_22 = 00
+codIncFGTS_23 = 00
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 020
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = ADIANTAMENTO 13o. SALARIO
+natRubr_19 = 5504
+tpRubr_20 = 1
+codIncCP_21 = 00
+codIncIRRF_22 = 00
+codIncFGTS_23 = 11
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010

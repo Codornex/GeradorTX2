@@ -1,0 +1,380 @@
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 067
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = 115.23-ASSISTENCIA MEDICA
+natRubr_19 = 9911
+tpRubr_20 = 2
+codIncCP_21 = 00
+codIncIRRF_22 = 00
+codIncFGTS_23 = 00
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 069
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = DESCONTO DE ABONO
+natRubr_19 = 9226
+tpRubr_20 = 2
+codIncCP_21 = 00
+codIncIRRF_22 = 00
+codIncFGTS_23 = 00
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 070
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = PREVIDENCIA PRIVADA (T)
+natRubr_19 = 9226
+tpRubr_20 = 4
+codIncCP_21 = 00
+codIncIRRF_22 = 00
+codIncFGTS_23 = 00
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 071
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = 100-DESC.PENSAO ALIMNT.(T
+natRubr_19 = 9213
+tpRubr_20 = 4
+codIncCP_21 = 00
+codIncIRRF_22 = 11
+codIncFGTS_23 = 00
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 072
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = DESC.IRRF.APOSENTADOS (T)
+natRubr_19 = 9938
+tpRubr_20 = 4
+codIncCP_21 = 00
+codIncIRRF_22 = 11
+codIncFGTS_23 = 00
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 073
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = DESC. 50% CONTRATO EXPER.
+natRubr_19 = 9299
+tpRubr_20 = 2
+codIncCP_21 = 00
+codIncIRRF_22 = 00
+codIncFGTS_23 = 00
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 074
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = 103-DESC AVISO PREVIO
+natRubr_19 = 6901
+tpRubr_20 = 2
+codIncCP_21 = 00
+codIncIRRF_22 = 00
+codIncFGTS_23 = 00
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 075
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = DESC. ADTO. DE FERIAS
+natRubr_19 = 9221
+tpRubr_20 = 2
+codIncCP_21 = 00
+codIncIRRF_22 = 00
+codIncFGTS_23 = 00
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 076
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = LIQUIDO PAGO NA  RESCISAO
+natRubr_19 = 9989
+tpRubr_20 = 2
+codIncCP_21 = 00
+codIncIRRF_22 = 00
+codIncFGTS_23 = 00
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 078
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = 115.1-DEESCONTO DE VALES
+natRubr_19 = 9200
+tpRubr_20 = 2
+codIncCP_21 = 00
+codIncIRRF_22 = 00
+codIncFGTS_23 = 00
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 079
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = LIQUIDO PAGO DE FERIAS
+natRubr_19 = 9989
+tpRubr_20 = 2
+codIncCP_21 = 00
+codIncIRRF_22 = 00
+codIncFGTS_23 = 00
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 080
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = 100-PENSAO ALIMENTICIA
+natRubr_19 = 9213
+tpRubr_20 = 2
+codIncCP_21 = 00
+codIncIRRF_22 = 11
+codIncFGTS_23 = 00
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 081
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = 115.22-DESC. FARMACIA
+natRubr_19 = 9911
+tpRubr_20 = 2
+codIncCP_21 = 00
+codIncIRRF_22 = 00
+codIncFGTS_23 = 00
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 082
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = 106-VALE TRANSPORTE (V)VA
+natRubr_19 = 9299
+tpRubr_20 = 2
+codIncCP_21 = 00
+codIncIRRF_22 = 00
+codIncFGTS_23 = 00
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 083
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = 106-VALE TRANSPORTE
+natRubr_19 = 9299
+tpRubr_20 = 2
+codIncCP_21 = 00
+codIncIRRF_22 = 00
+codIncFGTS_23 = 00
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 084
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = CONTRIB ASSITENCIAL
+natRubr_19 = 9232
+tpRubr_20 = 2
+codIncCP_21 = 00
+codIncIRRF_22 = 00
+codIncFGTS_23 = 00
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 085
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = CONTRIBUICAO SINDICAL (V)
+natRubr_19 = 9230
+tpRubr_20 = 2
+codIncCP_21 = 00
+codIncIRRF_22 = 00
+codIncFGTS_23 = 00
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 086
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = MENSALIDADE SINDICAL
+natRubr_19 = 9230
+tpRubr_20 = 2
+codIncCP_21 = 00
+codIncIRRF_22 = 00
+codIncFGTS_23 = 00
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 087
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = DESC. DESCAN. SEM. REMUN.
+natRubr_19 = 9210
+tpRubr_20 = 2
+codIncCP_21 = 11
+codIncIRRF_22 = 11
+codIncFGTS_23 = 11
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
+INCLUIRS1010
+tpAmb_4 = 1
+procEmi_5 = 1
+verProc_6 = FPA eSocial 2.4.01
+tpInsc_8 = 1
+nrInsc_9 = 50201599
+codRubr_13 = 088
+ideTabRubr_14 = EVENTOS
+iniValid_15 = 2018-01
+fimValid_16 = 
+dscRubr_18 = 115.9-DESCONTO DE FALTAS
+natRubr_19 = 9209
+tpRubr_20 = 2
+codIncCP_21 = 11
+codIncIRRF_22 = 11
+codIncFGTS_23 = 11
+codIncSIND_24 = 00
+observacao_29 = 
+SALVARS1010
