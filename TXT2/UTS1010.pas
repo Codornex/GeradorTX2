@@ -34,7 +34,7 @@ type
 
 implementation
 
-{ TS1000 }
+{ TS1010 }
 
 function TS1010.Add: TS1010;
 begin
