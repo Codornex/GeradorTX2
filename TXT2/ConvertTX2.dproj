@@ -110,6 +110,10 @@
         <DCCReference Include="UTS1000.pas"/>
         <DCCReference Include="UTS1005.pas"/>
         <DCCReference Include="UTS1020.pas"/>
+        <DCCReference Include="unConfiguracoes.pas">
+            <Form>frmConfiguracoes</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
