@@ -16,7 +16,7 @@ object frmPrincipal: TfrmPrincipal
   Position = poScreenCenter
   PixelsPerInch = 96
   TextHeight = 13
-  object Memo1: TMemo
+  object memoTX2: TMemo
     Left = 351
     Top = 16
     Width = 489
@@ -24,7 +24,6 @@ object frmPrincipal: TfrmPrincipal
     Align = alRight
     ScrollBars = ssBoth
     TabOrder = 0
-    ExplicitLeft = 352
   end
   object StatusBar1: TStatusBar
     Left = 0
@@ -32,7 +31,6 @@ object frmPrincipal: TfrmPrincipal
     Width = 840
     Height = 19
     Panels = <>
-    ExplicitWidth = 1015
   end
   object Panel1: TPanel
     Left = 0
@@ -42,7 +40,6 @@ object frmPrincipal: TfrmPrincipal
     Align = alTop
     BevelOuter = bvNone
     TabOrder = 2
-    ExplicitWidth = 1015
   end
   object Panel3: TPanel
     Left = 0
@@ -52,7 +49,6 @@ object frmPrincipal: TfrmPrincipal
     Align = alLeft
     BevelOuter = bvNone
     TabOrder = 3
-    ExplicitHeight = 368
     object Label1: TLabel
       Left = 1
       Top = 6
@@ -74,7 +70,6 @@ object frmPrincipal: TfrmPrincipal
       Align = alBottom
       FileList = FLBOrigem
       TabOrder = 0
-      ExplicitTop = 31
     end
   end
   object Panel4: TPanel
@@ -85,13 +80,11 @@ object frmPrincipal: TfrmPrincipal
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
-    ExplicitWidth = 164
-    ExplicitHeight = 368
     object FLBOrigem: TFileListBox
       Left = 5
-      Top = 144
+      Top = 216
       Width = 153
-      Height = 231
+      Height = 159
       ItemHeight = 13
       Mask = '*.txt'
       TabOrder = 0
@@ -108,6 +101,7 @@ object frmPrincipal: TfrmPrincipal
       Font.Height = -12
       Font.Name = 'Arial'
       Font.Style = [fsBold]
+      ItemIndex = 0
       Items.Strings = (
         'S1000'
         'S1005'
@@ -121,6 +115,24 @@ object frmPrincipal: TfrmPrincipal
       TabOrder = 1
       OnClick = RGArqTX2Click
     end
+    object RGTipoTX2: TRadioGroup
+      Left = 6
+      Top = 146
+      Width = 151
+      Height = 64
+      Caption = ' Tipo TX2 '
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ItemIndex = 0
+      Items.Strings = (
+        'Inclus'#227'o'
+        'Altera'#231#227'o')
+      ParentFont = False
+      TabOrder = 2
+    end
   end
   object Panel2: TPanel
     Left = 0
@@ -130,7 +142,6 @@ object frmPrincipal: TfrmPrincipal
     Align = alBottom
     BevelOuter = bvNone
     TabOrder = 5
-    ExplicitTop = 397
     object sbConfiguracao: TSpeedButton
       Left = 1
       Top = 6
