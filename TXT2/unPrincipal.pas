@@ -27,6 +27,7 @@ type
     procedure GeraTX2S1005;
     procedure GeraTX2S1005ALT;
     procedure GeraTX2S1010;
+    procedure GeraTX2S1010ALT;
     procedure GeraTX2S1020;
     procedure GeraTX2S1030;
     procedure GeraTX2S1050;
@@ -53,8 +54,8 @@ implementation
 
 {$R *.dfm}
 
-uses UTS1000, UTS1000ALT, UTS1005, UTS1005ALT, UTS1010, UTS1020, UTS1030, UTS1050, UTS2190, UTS2200,
-     UTS2200ALT, unConfiguracoes, unMain;
+uses UTS1000, UTS1000ALT, UTS1005, UTS1005ALT, UTS1010, UTS1010ALT, UTS1020,
+     UTS1030, UTS1050, UTS2190, UTS2200, UTS2200ALT, unConfiguracoes, unMain;
 
 procedure TfrmPrincipal.sbConfiguracaoClick(Sender: TObject);
 begin
@@ -84,7 +85,8 @@ begin
          end;
       2: begin
            if (RGTipoTX2.ItemIndex=0) then
-             GeraTX2S1010;
+             GeraTX2S1010 else
+             GeraTX2S1010ALT;
          end;
       3: begin
            if (RGTipoTX2.ItemIndex=0) then
@@ -365,15 +367,60 @@ begin
     memoTX2.Lines.Add('codIncSIND_24 = ' + S1010.Items[I].codIncSIND_24);
     memoTX2.Lines.Add('observacao_29 = ' + S1010.Items[I].observacao_29);
     memoTX2.Lines.Add('SALVARS1010');
-  (*  if (I=I+19) then
-    begin
-      iCount := iCount +1;
-      SaveTX2('S1010_'+IntToStr(iCount)+'.TX2');
-    end else
-    if (I=S1010.Count) then
-    begin
-      SaveTX2('S1010.TX2');
-    end;  *)
+  end;
+end;
+
+procedure TfrmPrincipal.GeraTX2S1010ALT;
+var
+  Lista: TStringList;
+  ArquivoTXT: TStringList;
+  I,J,iCount: Integer;
+  S1010ALT: TS1010ALT;
+begin
+  ArquivoTXT := TStringList.Create;
+  ArquivoTXT.LoadFromFile(FLBOrigem.FileName);
+  memoTX2.Lines.Clear;
+  S1010ALT := TS1010ALT.Create;
+  S1010ALT.GetS1010ALT(ArquivoTXT);
+  for I := 0 to Pred(S1010ALT.Count) do
+  begin
+    memoTX2.Lines.Add('ALTERARS1010');
+    memoTX2.Lines.Add('tpAmb_4 = ' + S1010ALT.Items[I].tpAmb_4);
+    memoTX2.Lines.Add('procEmi_5 = ' + S1010ALT.Items[I].procEmi_5);
+    memoTX2.Lines.Add('verProc_6 = ' + S1010ALT.Items[I].verProc_6);
+    memoTX2.Lines.Add('tpInsc_8 = ' + S1010ALT.Items[I].tpInsc_8);
+    memoTX2.Lines.Add('nrInsc_9 = ' + S1010ALT.Items[I].nrInsc_9);
+    memoTX2.Lines.Add('codRubr_13 = ' + S1010ALT.Items[I].codRubr_13);
+    memoTX2.Lines.Add('ideTabRubr_14 = ' + S1010ALT.Items[I].ideTabRubr_14);
+    memoTX2.Lines.Add('iniValid_15 = ' + S1010ALT.Items[I].iniValid_15);
+    memoTX2.Lines.Add('fimValid_16 = ' + S1010ALT.Items[I].fimValid_16);
+    memoTX2.Lines.Add('dscRubr_18 = ' + S1010ALT.Items[I].dscRubr_18);
+    memoTX2.Lines.Add('natRubr_19 = ' + S1010ALT.Items[I].natRubr_19);
+    memoTX2.Lines.Add('tpRubr_20 = ' + S1010ALT.Items[I].tpRubr_20);
+    memoTX2.Lines.Add('codIncCP_21 = ' + S1010ALT.Items[I].codIncCP_21);
+    memoTX2.Lines.Add('codIncIRRF_22 = ' + S1010ALT.Items[I].codIncIRRF_22);
+    memoTX2.Lines.Add('codIncFGTS_23 = ' + S1010ALT.Items[I].codIncFGTS_23);
+    memoTX2.Lines.Add('codIncSIND_24 = ' + S1010ALT.Items[I].codIncSIND_24);
+    memoTX2.Lines.Add('observacao_29 = ' + S1010ALT.Items[I].observacao_29);
+    memoTX2.Lines.Add('INCLUIRIDEPROCESSOCP_30');
+    memoTX2.Lines.Add('tpProc_31 = ' + S1010ALT.Items[I].tpProc_31);
+    memoTX2.Lines.Add('nrProc_32 = ' + S1010ALT.Items[I].nrProc_32);
+    memoTX2.Lines.Add('extDecisao_33 = ' + S1010ALT.Items[I].extDecisao_33);
+    memoTX2.Lines.Add('codSusp_34 = ' + S1010ALT.Items[I].codSusp_34);
+    memoTX2.Lines.Add('SALVARIDEPROCESSOCP_30');
+    memoTX2.Lines.Add('INCLUIRIDEPROCESSOIRRF_35');
+    memoTX2.Lines.Add('nrProc_36 = ' + S1010ALT.Items[I].nrProc_36);
+    memoTX2.Lines.Add('codSusp_37 = ' + S1010ALT.Items[I].codSusp_37);
+    memoTX2.Lines.Add('SALVARIDEPROCESSOIRRF_35');
+    memoTX2.Lines.Add('INCLUIRIDEPROCESSOFGTS_38');
+    memoTX2.Lines.Add('nrProc_39 = ' + S1010ALT.Items[I].nrProc_39);
+    memoTX2.Lines.Add('SALVARIDEPROCESSOFGTS_38');
+    memoTX2.Lines.Add('INCLUIRIDEPROCESSOSIND_41');
+    memoTX2.Lines.Add('nrProc_42 = ' + S1010ALT.Items[I].nrProc_42);
+    memoTX2.Lines.Add('SALVARIDEPROCESSOSIND_41');
+    memoTX2.Lines.Add('iniValid_44 = ' + S1010ALT.Items[I].iniValid_44);
+    memoTX2.Lines.Add('fimValid_45 = ' + S1010ALT.Items[I].fimValid_45);
+    memoTX2.Lines.Add('SALVARS1010');
   end;
 end;
 
