@@ -432,15 +432,5 @@ object frmPrincipal: TfrmPrincipal
       ParentFont = False
       OnClick = sbGeraTx2Click
     end
-    object BitBtn1: TBitBtn
-      Left = 336
-      Top = 16
-      Width = 75
-      Height = 25
-      Caption = 'BitBtn1'
-      TabOrder = 0
-      Visible = False
-      OnClick = BitBtn1Click
-    end
   end
 end

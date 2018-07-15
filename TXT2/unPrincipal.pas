@@ -22,10 +22,10 @@ type
     sbConfiguracao: TSpeedButton;
     sbGeraTx2: TSpeedButton;
     RGTipoTX2: TRadioGroup;
-    BitBtn1: TBitBtn;
     procedure GeraTX2S1000;
     procedure GeraTX2S1000ALT;
     procedure GeraTX2S1005;
+    procedure GeraTX2S1005ALT;
     procedure GeraTX2S1010;
     procedure GeraTX2S1020;
     procedure GeraTX2S1030;
@@ -39,7 +39,6 @@ type
     procedure RGArqTX2Click(Sender: TObject);
     procedure SaveTX2(aNameTX2: String);
     procedure CalcModValue(iDividendo, iDivisor, iQuociente, iResto: Integer);
-    procedure BitBtn1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -54,7 +53,7 @@ implementation
 
 {$R *.dfm}
 
-uses UTS1000, UTS1000ALT, UTS1005, UTS1010, UTS1020, UTS1030, UTS1050, UTS2190, UTS2200,
+uses UTS1000, UTS1000ALT, UTS1005, UTS1005ALT, UTS1010, UTS1020, UTS1030, UTS1050, UTS2190, UTS2200,
      UTS2200ALT, unConfiguracoes, unMain;
 
 procedure TfrmPrincipal.sbConfiguracaoClick(Sender: TObject);
@@ -80,7 +79,8 @@ begin
          end;
       1: begin
            if (RGTipoTX2.ItemIndex=0) then
-             GeraTX2S1005;
+             GeraTX2S1005 else
+             GeraTX2S1005ALT;
          end;
       2: begin
            if (RGTipoTX2.ItemIndex=0) then
@@ -109,13 +109,6 @@ begin
     end;
     frmPrincipal.Enabled := True;
   end;
-end;
-
-procedure TfrmPrincipal.BitBtn1Click(Sender: TObject);
-begin
-frmMain := TfrmMain.Create(frmMain);
-frmMain.ShowModal;
-FreeAndNil(frmMain);
 end;
 
 procedure TfrmPrincipal.CalcModValue(iDividendo, iDivisor, iQuociente,
@@ -284,6 +277,57 @@ begin
     memoTX2.Lines.Add('aliqRatAjust_22 = ' + S1005.Items[I].aliqRatAjust_22);
     memoTX2.Lines.Add('regPt_36 = ' + S1005.Items[I].regPt_36);
     memoTX2.Lines.Add('contApr_38 = ' + S1005.Items[I].contApr_38);
+    memoTX2.Lines.Add('SALVARS1005');
+  end;
+end;
+
+procedure TfrmPrincipal.GeraTX2S1005ALT;
+var
+  Lista: TStringList;
+  ArquivoTXT: TStringList;
+  I,J: Integer;
+  S1005ALT: TS1005ALT;
+begin
+  ArquivoTXT := TStringList.Create;
+  ArquivoTXT.LoadFromFile(FLBOrigem.FileName);
+  memoTX2.Lines.Clear;
+  S1005ALT := TS1005ALT.Create;
+  S1005ALT.GetS1005ALT(ArquivoTXT);
+  for I := 0 to Pred(S1005ALT.Count) do
+  begin
+    memoTX2.Lines.Add('ALTERARS1005');
+    memoTX2.Lines.Add('tpAmb_4 = ' + S1005ALT.Items[I].tpAmb_4);
+    memoTX2.Lines.Add('procEmi_5 = ' + S1005ALT.Items[I].procEmi_5);
+    memoTX2.Lines.Add('verProc_6 = ' + S1005ALT.Items[I].verProc_6);
+    memoTX2.Lines.Add('tpInsc_8 = ' + S1005ALT.Items[I].tpInsc_8);
+    memoTX2.Lines.Add('nrInsc_9 = ' + S1005ALT.Items[I].nrInsc_9);
+    memoTX2.Lines.Add('tpInsc_13 = ' + S1005ALT.Items[I].tpInsc_13);
+    memoTX2.Lines.Add('nrInsc_14 = ' + S1005ALT.Items[I].nrInsc_14);
+    memoTX2.Lines.Add('iniValid_15 = ' + S1005ALT.Items[I].iniValid_15);
+    memoTX2.Lines.Add('fimValid_16 = ' + S1005ALT.Items[I].fimValid_16);
+    memoTX2.Lines.Add('cnaePrep_18 = ' + S1005ALT.Items[I].cnaePrep_18);
+    memoTX2.Lines.Add('aliqRat_20 = ' + S1005ALT.Items[I].aliqRat_20);
+    memoTX2.Lines.Add('fap_21 = ' + S1005ALT.Items[I].fap_21);
+    memoTX2.Lines.Add('aliqRatAjust_22 = ' + S1005ALT.Items[I].aliqRatAjust_22);
+    memoTX2.Lines.Add('tpProc_24 = ' + S1005ALT.Items[I].tpProc_24);
+    memoTX2.Lines.Add('nrProc_25 = ' + S1005ALT.Items[I].nrProc_25);
+    memoTX2.Lines.Add('codSusp_26 = ' + S1005ALT.Items[I].codSusp_26);
+    memoTX2.Lines.Add('tpProc_28 = ' + S1005ALT.Items[I].tpProc_28);
+    memoTX2.Lines.Add('nrProc_29 = ' + S1005ALT.Items[I].nrProc_29);
+    memoTX2.Lines.Add('codSusp_30 = ' + S1005ALT.Items[I].codSusp_30);
+    memoTX2.Lines.Add('tpCaepf_32 = ' + S1005ALT.Items[I].tpCaepf_32);
+    memoTX2.Lines.Add('indSubstPatrObra_34 = ' + S1005ALT.Items[I].indSubstPatrObra_34);
+    memoTX2.Lines.Add('regPt_36 = ' + S1005ALT.Items[I].regPt_36);
+    memoTX2.Lines.Add('contApr_38 = ' + S1005ALT.Items[I].contApr_38);
+    memoTX2.Lines.Add('nrProcJud_39 = ' + S1005ALT.Items[I].nrProcJud_39);
+    memoTX2.Lines.Add('contEntEd_40 = ' + S1005ALT.Items[I].contEntEd_40);
+    memoTX2.Lines.Add('INCLUIRINFOENTEDUC_41');
+    memoTX2.Lines.Add('nrInsc_42 = ' + S1005ALT.Items[I].nrInsc_42);
+    memoTX2.Lines.Add('SALVARINFOENTEDUC_41');
+    memoTX2.Lines.Add('contPCD_44 = ' + S1005ALT.Items[I].contPCD_44);
+    memoTX2.Lines.Add('nrProcJud_45 = ' + S1005ALT.Items[I].nrProcJud_45);
+    memoTX2.Lines.Add('iniValid_46 = ' + S1005ALT.Items[I].iniValid_46);
+    memoTX2.Lines.Add('fimValid_47 = ' + S1005ALT.Items[I].fimValid_47);
     memoTX2.Lines.Add('SALVARS1005');
   end;
 end;
