@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>2018/07/02 20:30:58.000.033,C:\Users\davis\Desktop\Projeto TXT2\TXT2\unPrincipal.dfm=C:\Users\davis\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
-    <Transaction>2018/07/02 20:30:58.000.033,C:\Users\davis\Desktop\Projeto TXT2\TXT2\unPrincipal.pas=C:\Users\davis\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
-    <Transaction>2018/07/02 20:31:54.000.970,C:\Users\davis\Desktop\Projeto TXT2\TXT2\ConvertTX2.dproj=C:\Users\davis\Documents\Embarcadero\Studio\Projects\Project2.dproj</Transaction>
-    <Transaction>2018/07/02 22:00:39.000.836,C:\Users\davis\Desktop\Projeto TXT2\TXT2\UTS1000.pas=C:\Users\davis\Desktop\Projeto TXT2\TXT2\Unit1.pas</Transaction>
-    <Transaction>2018/07/04 22:49:09.000.933,C:\Users\davis\Desktop\Projeto TXT2\TXT2\UTS1005.pas=C:\Users\davis\Desktop\Projeto TXT2\TXT2\Unit1.pas</Transaction>
-    <Transaction>2018/07/04 23:09:32.000.450,C:\Users\davis\Desktop\Projeto TXT2\TXT2\UTS1020.pas=C:\Users\davis\Desktop\Projeto TXT2\TXT2\Unit1.pas</Transaction>
-    <Transaction>2018/07/07 22:30:33.158,C:\Projetos\GeradorTX2.git\trunk\TXT2\unConfiguracoes.dfm=C:\Projetos\GeradorTX2.git\trunk\TXT2\Unit1.dfm</Transaction>
+    <Transaction>2018/07/02 20:30:58.000.033,C:\Users\davis\Documents\Embarcadero\Studio\Projects\Unit2.dfm=C:\Users\davis\Desktop\Projeto TXT2\TXT2\unPrincipal.dfm</Transaction>
+    <Transaction>2018/07/02 20:30:58.000.033,C:\Users\davis\Documents\Embarcadero\Studio\Projects\Unit2.pas=C:\Users\davis\Desktop\Projeto TXT2\TXT2\unPrincipal.pas</Transaction>
+    <Transaction>2018/07/02 20:31:54.000.970,C:\Users\davis\Documents\Embarcadero\Studio\Projects\Project2.dproj=C:\Users\davis\Desktop\Projeto TXT2\TXT2\ConvertTX2.dproj</Transaction>
+    <Transaction>2018/07/02 22:00:39.000.836,C:\Users\davis\Desktop\Projeto TXT2\TXT2\Unit1.pas=C:\Users\davis\Desktop\Projeto TXT2\TXT2\UTS1000.pas</Transaction>
+    <Transaction>2018/07/04 22:49:09.000.933,C:\Users\davis\Desktop\Projeto TXT2\TXT2\Unit1.pas=C:\Users\davis\Desktop\Projeto TXT2\TXT2\UTS1005.pas</Transaction>
+    <Transaction>2018/07/04 23:09:32.000.450,C:\Users\davis\Desktop\Projeto TXT2\TXT2\Unit1.pas=C:\Users\davis\Desktop\Projeto TXT2\TXT2\UTS1020.pas</Transaction>
+    <Transaction>2018/07/07 22:30:33.000.158,C:\Projetos\GeradorTX2.git\trunk\TXT2\Unit1.dfm=C:\Projetos\GeradorTX2.git\trunk\TXT2\unConfiguracoes.dfm</Transaction>
+    <Transaction>2018/07/14 16:56:37.000.457,C:\Projetos\GeradorTX2.git\trunk\TXT2\Unit1.dfm=C:\Projetos\GeradorTX2.git\trunk\TXT2\unMain.dfm</Transaction>
   </Transactions>
 </BorlandProject>

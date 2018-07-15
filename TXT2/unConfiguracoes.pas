@@ -12,11 +12,15 @@ type
     StatusBar1: TStatusBar;
     GroupBox1: TGroupBox;
     bConfirmar: TBitBtn;
-    sbSelectDirect: TSpeedButton;
+    sbSelectDirectTX2: TSpeedButton;
     OpenDialog1: TOpenDialog;
     edtDiretorioTX2: TEdit;
-    procedure sbSelectDirectClick(Sender: TObject);
+    GroupBox2: TGroupBox;
+    edtDiretorioTXT: TEdit;
+    sbSelectDirectTXT: TSpeedButton;
+    procedure sbSelectDirectTX2Click(Sender: TObject);
     procedure bConfirmarClick(Sender: TObject);
+    procedure sbSelectDirectTXTClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -50,13 +54,19 @@ begin
   begin
     _DirTX2 := TIniFile.Create(ExtractFilePath(Application.ExeName)+'\ConfigTX2.ini');
     _DirTX2.WriteString('Config', 'DirTX2', edtDiretorioTX2.Text);
+    _DirTX2.WriteString('Config', 'DirTXT', edtDiretorioTXT.Text);
     _DirTX2.Free;
   end;
 end;
 
-procedure TfrmConfiguracoes.sbSelectDirectClick(Sender: TObject);
+procedure TfrmConfiguracoes.sbSelectDirectTX2Click(Sender: TObject);
 begin
   edtDiretorioTX2.Text := SelectADirectory('Selecione a pasta dos arquivos TX2.');
+end;
+
+procedure TfrmConfiguracoes.sbSelectDirectTXTClick(Sender: TObject);
+begin
+  edtDiretorioTXT.Text := SelectADirectory('Selecione a pasta dos arquivos TXT.');
 end;
 
 end.
