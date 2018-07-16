@@ -110,7 +110,10 @@ object frmPrincipal: TfrmPrincipal
         'S1030'
         'S1050'
         'S2190'
-        'S2200')
+        'S2200'
+        'S2205'
+        'S2250'
+        'S2299')
       ParentFont = False
       TabOrder = 1
       OnClick = RGArqTX2Click
