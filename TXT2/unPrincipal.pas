@@ -15,13 +15,15 @@ type
     Panel3: TPanel;
     DirectoryListBox1: TDirectoryListBox;
     Panel4: TPanel;
-    FLBOrigem: TFileListBox;
     Label1: TLabel;
     RGArqTX2: TRadioGroup;
     Panel2: TPanel;
     sbConfiguracao: TSpeedButton;
-    sbGeraTx2: TSpeedButton;
     RGTipoTX2: TRadioGroup;
+    GroupBox1: TGroupBox;
+    FLBOrigem: TFileListBox;
+    btnCopiar: TBitBtn;
+    DriveComboBox1: TDriveComboBox;
     procedure GeraTX2S1000;
     procedure GeraTX2S1000ALT;
     procedure GeraTX2S1005;
@@ -32,21 +34,30 @@ type
     procedure GeraTX2S1020ALT;
     procedure GeraTX2S1030;
     procedure GeraTX2S1030ALT;
+    procedure GeraTX2S1035;
+    procedure GeraTX2S1035ALT;
+    procedure GeraTX2S1040;
+    procedure GeraTX2S1040ALT;
     procedure GeraTX2S1050;
     procedure GeraTX2S1050ALT;
+    procedure GeraTX2S1060;
+    procedure GeraTX2S1060ALT;
     procedure GeraTX2S2190;
     procedure GeraTX2S2190ALT;
     procedure GeraTX2S2200;
     procedure GeraTX2S2200ALT;
     procedure GeraTX2S2205;
+    procedure GeraTX2S2206;
+    procedure GeraTX2S2210;
+    procedure GeraTX2S2230;
     procedure GeraTX2S2250;
     procedure GeraTX2S2299;
-    procedure sbGeraTx2Click(Sender: TObject);
     procedure sbConfiguracaoClick(Sender: TObject);
     procedure ConfiracoesIniciais;
     procedure RGArqTX2Click(Sender: TObject);
     procedure SaveTX2(aNameTX2: String);
     procedure CalcModValue(iDividendo, iDivisor, iQuociente, iResto: Integer);
+    procedure btnCopiarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -63,7 +74,8 @@ implementation
 
 uses UTS1000, UTS1000ALT, UTS1005, UTS1005ALT, UTS1010, UTS1010ALT, UTS1020, UTS1020ALT,
      UTS1030, UTS1030ALT, UTS1050, UTS1050ALT, UTS2190, UTS2190ALT, UTS2200, UTS2200ALT,
-     UTS2205, UTS2250, UTS2299, unConfiguracoes, unMain;
+     UTS2205, UTS2250, UTS2299, UTS1035, UTS1035ALT, UTS1040, UTS1040ALT, UTS1060, UTS1060ALT,
+     UTS2206, UTS2210, UTS2230, unConfiguracoes, unMain;
 
 procedure TfrmPrincipal.sbConfiguracaoClick(Sender: TObject);
 begin
@@ -72,73 +84,10 @@ begin
   FreeAndNil(frmConfiguracoes);
 end;
 
-procedure TfrmPrincipal.sbGeraTx2Click(Sender: TObject);
+procedure TfrmPrincipal.btnCopiarClick(Sender: TObject);
 begin
-  if FLBOrigem.FileName = EmptyStr then
-  begin
-    Application.MessageBox('Selecione um arquivo','Atenção',MB_ICONWARNING);
-  end else
-  begin
-    frmPrincipal.Enabled := False;
-    case RGArqTX2.ItemIndex of
-      0: begin
-           if (RGTipoTX2.ItemIndex=0) then
-             GeraTX2S1000 else
-             GeraTX2S1000ALT;
-         end;
-      1: begin
-           if (RGTipoTX2.ItemIndex=0) then
-             GeraTX2S1005 else
-             GeraTX2S1005ALT;
-         end;
-      2: begin
-           if (RGTipoTX2.ItemIndex=0) then
-             GeraTX2S1010 else
-             GeraTX2S1010ALT;
-         end;
-      3: begin
-           if (RGTipoTX2.ItemIndex=0) then
-             GeraTX2S1020 else
-             GeraTX2S1020ALT;
-         end;
-      4: begin
-           if (RGTipoTX2.ItemIndex=0) then
-             GeraTX2S1030 else
-             GeraTX2S1030ALT;
-         end;
-      5: begin
-           if (RGTipoTX2.ItemIndex=0) then
-             GeraTX2S1050 else
-             GeraTX2S1050ALT;
-         end;
-      6: begin
-           if (RGTipoTX2.ItemIndex=0) then
-             GeraTX2S2190 else
-             Application.MessageBox('Não existe arquivo de alteralçao.','Atenção',MB_OK+MB_ICONINFORMATION);
-         end;
-      7: begin
-           if (RGTipoTX2.ItemIndex=0) then
-             GeraTX2S2200 else
-             Application.MessageBox('Não existe arquivo de alteralçao.','Atenção',MB_OK+MB_ICONINFORMATION);
-         end;
-      8: begin
-           if (RGTipoTX2.ItemIndex=0) then
-             GeraTX2S2205 else
-             Application.MessageBox('Não existe arquivo de alteralçao.','Atenção',MB_OK+MB_ICONINFORMATION);
-         end;
-      9: begin
-           if (RGTipoTX2.ItemIndex=0) then
-             GeraTX2S2250 else
-             Application.MessageBox('Não existe arquivo de alteralçao.','Atenção',MB_OK+MB_ICONINFORMATION);
-         end;
-     10: begin
-           if (RGTipoTX2.ItemIndex=0) then
-             GeraTX2S2299 else
-             Application.MessageBox('Não existe arquivo de alteralçao.','Atenção',MB_OK+MB_ICONINFORMATION);
-         end;
-    end;
-    frmPrincipal.Enabled := True;
-  end;
+  memoTX2.SelectAll;
+  memoTX2.CopyToClipboard;
 end;
 
 procedure TfrmPrincipal.CalcModValue(iDividendo, iDivisor, iQuociente,
@@ -164,9 +113,11 @@ procedure TfrmPrincipal.GeraTX2S1000;
 var
   Lista: TStringList;
   ArquivoTXT: TStringList;
-  I,J: Integer;
+  I,J,K,iCount: Integer;
   S1000: TS1000;
 begin
+  K := 0;
+  iCount := 0;
   ArquivoTXT := TStringList.Create;
   ArquivoTXT.LoadFromFile(FLBOrigem.FileName);
   memoTX2.Lines.Clear;
@@ -592,6 +543,130 @@ begin
   end;
 end;
 
+procedure TfrmPrincipal.GeraTX2S1035;
+var
+  Lista: TStringList;
+  ArquivoTXT: TStringList;
+  I,J: Integer;
+  S1035: TS1035;
+begin
+  ArquivoTXT := TStringList.Create;
+  ArquivoTXT.LoadFromFile(FLBOrigem.FileName);
+  memoTX2.Lines.Clear;
+  S1035 := TS1035.Create;
+  S1035.GetS1035(ArquivoTXT);
+  for I := 0 to Pred(S1035.Count) do
+  begin
+    memoTX2.Lines.Add('INCLUIRS1035');
+    memoTX2.Lines.Add('tpAmb_4 = ' + S1035.Items[I].tpAmb_4);
+    memoTX2.Lines.Add('procEmi_5 = ' + S1035.Items[I].procEmi_5);
+    memoTX2.Lines.Add('verProc_6 = ' + S1035.Items[I].verProc_6);
+    memoTX2.Lines.Add('tpInsc_8 = ' + S1035.Items[I].tpInsc_8);
+    memoTX2.Lines.Add('nrInsc_9 = ' + S1035.Items[I].nrInsc_9);
+    memoTX2.Lines.Add('codCarreira_13 = ' + S1035.Items[I].codCarreira_13);
+    memoTX2.Lines.Add('iniValid_14 = ' + S1035.Items[I].iniValid_14);
+    memoTX2.Lines.Add('fimValid_15 = ' + S1035.Items[I].fimValid_15);
+    memoTX2.Lines.Add('dscCarreira_17 = ' + S1035.Items[I].dscCarreira_17);
+    memoTX2.Lines.Add('leiCarr_18 = ' + S1035.Items[I].leiCarr_18);
+    memoTX2.Lines.Add('dtLeiCarr_19 = ' + S1035.Items[I].dtLeiCarr_19);
+    memoTX2.Lines.Add('sitCarr_20 = ' + S1035.Items[I].sitCarr_20);
+    memoTX2.Lines.Add('SALVARS1035');
+  end;
+end;
+
+procedure TfrmPrincipal.GeraTX2S1035ALT;
+var
+  Lista: TStringList;
+  ArquivoTXT: TStringList;
+  I,J: Integer;
+  S1035ALT: TS1035ALT;
+begin
+  ArquivoTXT := TStringList.Create;
+  ArquivoTXT.LoadFromFile(FLBOrigem.FileName);
+  memoTX2.Lines.Clear;
+  S1035ALT := TS1035ALT.Create;
+  S1035ALT.GetS1035ALT(ArquivoTXT);
+  for I := 0 to Pred(S1035ALT.Count) do
+  begin
+    memoTX2.Lines.Add('ALTERARS1035');
+    memoTX2.Lines.Add('tpAmb_4 = ' + S1035ALT.Items[I].tpAmb_4);
+    memoTX2.Lines.Add('procEmi_5 = ' + S1035ALT.Items[I].procEmi_5);
+    memoTX2.Lines.Add('verProc_6 = ' + S1035ALT.Items[I].verProc_6);
+    memoTX2.Lines.Add('tpInsc_8 = ' + S1035ALT.Items[I].tpInsc_8);
+    memoTX2.Lines.Add('nrInsc_9 = ' + S1035ALT.Items[I].nrInsc_9);
+    memoTX2.Lines.Add('codCarreira_13 = ' + S1035ALT.Items[I].codCarreira_13);
+    memoTX2.Lines.Add('iniValid_14 = ' + S1035ALT.Items[I].iniValid_14);
+    memoTX2.Lines.Add('fimValid_15 = ' + S1035ALT.Items[I].fimValid_15);
+    memoTX2.Lines.Add('dscCarreira_17 = ' + S1035ALT.Items[I].dscCarreira_17);
+    memoTX2.Lines.Add('leiCarr_18 = ' + S1035ALT.Items[I].leiCarr_18);
+    memoTX2.Lines.Add('dtLeiCarr_19 = ' + S1035ALT.Items[I].dtLeiCarr_19);
+    memoTX2.Lines.Add('sitCarr_20 = ' + S1035ALT.Items[I].sitCarr_20);
+    memoTX2.Lines.Add('iniValid_21 = ' + S1035ALT.Items[I].iniValid_21);
+    memoTX2.Lines.Add('fimValid_22 = ' + S1035ALT.Items[I].fimValid_22);
+    memoTX2.Lines.Add('SALVARS1035');
+  end;
+end;
+
+procedure TfrmPrincipal.GeraTX2S1040;
+var
+  Lista: TStringList;
+  ArquivoTXT: TStringList;
+  I,J: Integer;
+  S1040: TS1040;
+begin
+  ArquivoTXT := TStringList.Create;
+  ArquivoTXT.LoadFromFile(FLBOrigem.FileName);
+  memoTX2.Lines.Clear;
+  S1040 := TS1040.Create;
+  S1040.GetS1040(ArquivoTXT);
+  for I := 0 to Pred(S1040.Count) do
+  begin
+    memoTX2.Lines.Add('INCLUIRS1050');
+    memoTX2.Lines.Add('tpAmb_4 = ' + S1040.Items[I].tpAmb_4);
+    memoTX2.Lines.Add('procEmi_5 = ' + S1040.Items[I].procEmi_5);
+    memoTX2.Lines.Add('verProc_6 = ' + S1040.Items[I].verProc_6);
+    memoTX2.Lines.Add('tpInsc_8 = ' + S1040.Items[I].tpInsc_8);
+    memoTX2.Lines.Add('nrInsc_9 = ' + S1040.Items[I].nrInsc_9);
+    memoTX2.Lines.Add('codFuncao_13 = ' + S1040.Items[I].codFuncao_13);
+    memoTX2.Lines.Add('iniValid_14 = ' + S1040.Items[I].iniValid_14);
+    memoTX2.Lines.Add('fimValid_15 = ' + S1040.Items[I].fimValid_15);
+    memoTX2.Lines.Add('dscFuncao_17 = ' + S1040.Items[I].dscFuncao_17);
+    memoTX2.Lines.Add('codCBO_18 = ' + S1040.Items[I].codCBO_18);
+    memoTX2.Lines.Add('SALVARS1050');
+  end;
+end;
+
+procedure TfrmPrincipal.GeraTX2S1040ALT;
+var
+  Lista: TStringList;
+  ArquivoTXT: TStringList;
+  I,J: Integer;
+  S1040ALT: TS1040ALT;
+begin
+  ArquivoTXT := TStringList.Create;
+  ArquivoTXT.LoadFromFile(FLBOrigem.FileName);
+  memoTX2.Lines.Clear;
+  S1040ALT := TS1040ALT.Create;
+  S1040ALT.GetS1040ALT(ArquivoTXT);
+  for I := 0 to Pred(S1040ALT.Count) do
+  begin
+    memoTX2.Lines.Add('ALTERARS1040');
+    memoTX2.Lines.Add('tpAmb_4 = ' + S1040ALT.Items[I].tpAmb_4);
+    memoTX2.Lines.Add('procEmi_5 = ' + S1040ALT.Items[I].procEmi_5);
+    memoTX2.Lines.Add('verProc_6 = ' + S1040ALT.Items[I].verProc_6);
+    memoTX2.Lines.Add('tpInsc_8 = ' + S1040ALT.Items[I].tpInsc_8);
+    memoTX2.Lines.Add('nrInsc_9 = ' + S1040ALT.Items[I].nrInsc_9);
+    memoTX2.Lines.Add('codFuncao_13 = ' + S1040ALT.Items[I].codFuncao_13);
+    memoTX2.Lines.Add('iniValid_14 = ' + S1040ALT.Items[I].iniValid_14);
+    memoTX2.Lines.Add('fimValid_15 = ' + S1040ALT.Items[I].fimValid_15);
+    memoTX2.Lines.Add('dscFuncao_17 = ' + S1040ALT.Items[I].dscFuncao_17);
+    memoTX2.Lines.Add('codCBO_18 = ' + S1040ALT.Items[I].codCBO_18);
+    memoTX2.Lines.Add('iniValid_19 = ' + S1040ALT.Items[I].iniValid_19);
+    memoTX2.Lines.Add('fimValid_20 = ' + S1040ALT.Items[I].fimValid_20);
+    memoTX2.Lines.Add('SALVARS1040');
+  end;
+end;
+
 procedure TfrmPrincipal.GeraTX2S1050;
 var
   Lista: TStringList;
@@ -665,6 +740,76 @@ begin
     memoTX2.Lines.Add('iniValid_26 = ' + S1050ALT.Items[I].iniValid_26);
     memoTX2.Lines.Add('fimValid_27 = ' + S1050ALT.Items[I].iniValid_26);
     memoTX2.Lines.Add('SALVARS1050');
+  end;
+end;
+
+procedure TfrmPrincipal.GeraTX2S1060;
+var
+  Lista: TStringList;
+  ArquivoTXT: TStringList;
+  I,J: Integer;
+  S1060: TS1060;
+begin
+  ArquivoTXT := TStringList.Create;
+  ArquivoTXT.LoadFromFile(FLBOrigem.FileName);
+  memoTX2.Lines.Clear;
+  S1060 := TS1060.Create;
+  S1060.GetS1060(ArquivoTXT);
+  for I := 0 to Pred(S1060.Count) do
+  begin
+    memoTX2.Lines.Add('INCLUIRS1060');
+    memoTX2.Lines.Add('tpAmb_4 = ' + S1060.Items[I].tpAmb_4);
+    memoTX2.Lines.Add('procEmi_5 = ' + S1060.Items[I].procEmi_5);
+    memoTX2.Lines.Add('verProc_6 = ' + S1060.Items[I].verProc_6);
+    memoTX2.Lines.Add('tpInsc_8 = ' + S1060.Items[I].tpInsc_8);
+    memoTX2.Lines.Add('nrInsc_9 = ' + S1060.Items[I].nrInsc_9);
+    memoTX2.Lines.Add('codAmb_13 = ' + S1060.Items[I].codAmb_13);
+    memoTX2.Lines.Add('iniValid_14 = ' + S1060.Items[I].iniValid_14);
+    memoTX2.Lines.Add('fimValid_15 = ' + S1060.Items[I].fimValid_15);
+    memoTX2.Lines.Add('dscAmb_17 = ' + S1060.Items[I].dscAmb_17);
+    memoTX2.Lines.Add('localAmb_18 = ' + S1060.Items[I].localAmb_18);
+    memoTX2.Lines.Add('tpInsc_19 = ' + S1060.Items[I].tpInsc_19);
+    memoTX2.Lines.Add('nrInsc_20 = ' + S1060.Items[I].nrInsc_20);
+    memoTX2.Lines.Add('INCLUIRFATORRISCO_21');
+    memoTX2.Lines.Add('codFatRis_22 = ' + S1060.Items[I].codFatRis_22);
+    memoTX2.Lines.Add('SALVARFATORRISCO_21');
+    memoTX2.Lines.Add('SALVARS1060');
+  end;
+end;
+
+procedure TfrmPrincipal.GeraTX2S1060ALT;
+var
+  Lista: TStringList;
+  ArquivoTXT: TStringList;
+  I,J: Integer;
+  S1060ALT: TS1060ALT;
+begin
+  ArquivoTXT := TStringList.Create;
+  ArquivoTXT.LoadFromFile(FLBOrigem.FileName);
+  memoTX2.Lines.Clear;
+  S1060ALT := TS1060ALT.Create;
+  S1060ALT.GetS1060ALT(ArquivoTXT);
+  for I := 0 to Pred(S1060ALT.Count) do
+  begin
+    memoTX2.Lines.Add('INCLUIRS1060');
+    memoTX2.Lines.Add('tpAmb_4 = ' + S1060ALT.Items[I].tpAmb_4);
+    memoTX2.Lines.Add('procEmi_5 = ' + S1060ALT.Items[I].procEmi_5);
+    memoTX2.Lines.Add('verProc_6 = ' + S1060ALT.Items[I].verProc_6);
+    memoTX2.Lines.Add('tpInsc_8 = ' + S1060ALT.Items[I].tpInsc_8);
+    memoTX2.Lines.Add('nrInsc_9 = ' + S1060ALT.Items[I].nrInsc_9);
+    memoTX2.Lines.Add('codAmb_13 = ' + S1060ALT.Items[I].codAmb_13);
+    memoTX2.Lines.Add('iniValid_14 = ' + S1060ALT.Items[I].iniValid_14);
+    memoTX2.Lines.Add('fimValid_15 = ' + S1060ALT.Items[I].fimValid_15);
+    memoTX2.Lines.Add('dscAmb_17 = ' + S1060ALT.Items[I].dscAmb_17);
+    memoTX2.Lines.Add('localAmb_18 = ' + S1060ALT.Items[I].localAmb_18);
+    memoTX2.Lines.Add('tpInsc_19 = ' + S1060ALT.Items[I].tpInsc_19);
+    memoTX2.Lines.Add('nrInsc_20 = ' + S1060ALT.Items[I].nrInsc_20);
+    memoTX2.Lines.Add('INCLUIRFATORRISCO_21');
+    memoTX2.Lines.Add('codFatRis_22 = ' + S1060ALT.Items[I].codFatRis_22);
+    memoTX2.Lines.Add('SALVARFATORRISCO_21');
+    memoTX2.Lines.Add('iniValid_23 = ' + S1060ALT.Items[I].iniValid_23);
+    memoTX2.Lines.Add('fimValid_24 = ' + S1060ALT.Items[I].fimValid_24);
+    memoTX2.Lines.Add('SALVARS1060');
   end;
 end;
 
@@ -1119,6 +1264,210 @@ begin
   end;
 end;
 
+procedure TfrmPrincipal.GeraTX2S2206;
+var
+  Lista: TStringList;
+  ArquivoTXT: TStringList;
+  I,J: Integer;
+  S2206: TS2206;
+begin
+  ArquivoTXT := TStringList.Create;
+  ArquivoTXT.LoadFromFile(FLBOrigem.FileName);
+  memoTX2.Lines.Clear;
+  S2206 := TS2206.Create;
+  S2206.GetS2206(ArquivoTXT);
+  for I := 0 to Pred(S2206.Count) do
+  begin
+    memoTX2.Lines.Add('INCLUIRS2206');
+    memoTX2.Lines.Add('indRetif_4 = ' + S2206.Items[I].indRetif_4);
+    memoTX2.Lines.Add('nrRecibo_5 = ' + S2206.Items[I].nrRecibo_5);
+    memoTX2.Lines.Add('tpAmb_6 = ' + S2206.Items[I].tpAmb_6);
+    memoTX2.Lines.Add('procEmi_7 = ' + S2206.Items[I].procEmi_7);
+    memoTX2.Lines.Add('verProc_8 = ' + S2206.Items[I].verProc_8);
+    memoTX2.Lines.Add('tpInsc_10 = ' + S2206.Items[I].tpInsc_10);
+    memoTX2.Lines.Add('nrInsc_11 = ' + S2206.Items[I].nrInsc_11);
+    memoTX2.Lines.Add('cpfTrab_13 = ' + S2206.Items[I].cpfTrab_13);
+    memoTX2.Lines.Add('nisTrab_14 = ' + S2206.Items[I].nisTrab_14);
+    memoTX2.Lines.Add('matricula_15 = ' + S2206.Items[I].matricula_15);
+    memoTX2.Lines.Add('dtAlteracao_17 = ' + S2206.Items[I].dtAlteracao_17);
+    memoTX2.Lines.Add('dtEf_18 = ' + S2206.Items[I].dtEf_18);
+    memoTX2.Lines.Add('dscAlt_19 = ' + S2206.Items[I].dscAlt_19);
+    memoTX2.Lines.Add('tpRegPrev_22 = ' + S2206.Items[I].tpRegPrev_22);
+    memoTX2.Lines.Add('tpRegJor_25 = ' + S2206.Items[I].tpRegJor_25);
+    memoTX2.Lines.Add('natAtividade_26 = ' + S2206.Items[I].natAtividade_26);
+    memoTX2.Lines.Add('dtBase_27 = ' + S2206.Items[I].dtBase_27);
+    memoTX2.Lines.Add('cnpjSindCategProf_28 = ' + S2206.Items[I].cnpjSindCategProf_28);
+    memoTX2.Lines.Add('justProrr_30 = ' + S2206.Items[I].justProrr_30);
+    memoTX2.Lines.Add('tpInsc_75 = ' + S2206.Items[I].tpInsc_75);
+    memoTX2.Lines.Add('nrInsc_76 = ' + S2206.Items[I].nrInsc_76);
+    memoTX2.Lines.Add('tpPlanRP_32 = ' + S2206.Items[I].tpPlanRP_32);
+    memoTX2.Lines.Add('codCargo_34 = ' + S2206.Items[I].codCargo_34);
+    memoTX2.Lines.Add('codFuncao_35 = ' + S2206.Items[I].codFuncao_35);
+    memoTX2.Lines.Add('codCateg_36 = ' + S2206.Items[I].codCateg_36);
+    memoTX2.Lines.Add('codCarreira_37 = ' + S2206.Items[I].codCarreira_37);
+    memoTX2.Lines.Add('dtIngrCarr_38 = ' + S2206.Items[I].dtIngrCarr_38);
+    memoTX2.Lines.Add('vrSalFx_40 = ' + S2206.Items[I].vrSalFx_40);
+    memoTX2.Lines.Add('undSalFixo_41 = ' + S2206.Items[I].undSalFixo_41);
+    memoTX2.Lines.Add('dscSalVar_42 = ' + S2206.Items[I].dscSalVar_42);
+    memoTX2.Lines.Add('tpContr_44 = ' + S2206.Items[I].tpContr_44);
+    memoTX2.Lines.Add('dtTerm_45 = ' + S2206.Items[I].dtTerm_45);
+    memoTX2.Lines.Add('tpInsc_48 = ' + S2206.Items[I].tpInsc_48);
+    memoTX2.Lines.Add('nrInsc_49 = ' + S2206.Items[I].nrInsc_49);
+    memoTX2.Lines.Add('descComp_50 = ' + S2206.Items[I].descComp_50);
+    memoTX2.Lines.Add('tpLograd_52 = ' + S2206.Items[I].tpLograd_52);
+    memoTX2.Lines.Add('dscLograd_53 = ' + S2206.Items[I].dscLograd_53);
+    memoTX2.Lines.Add('nrLograd_54 = ' + S2206.Items[I].nrLograd_54);
+    memoTX2.Lines.Add('complemento_55 = ' + S2206.Items[I].complemento_55);
+    memoTX2.Lines.Add('bairro_56 = ' + S2206.Items[I].bairro_56);
+    memoTX2.Lines.Add('cep_57 = ' + S2206.Items[I].cep_57);
+    memoTX2.Lines.Add('codMunic_58 = ' + S2206.Items[I].codMunic_58);
+    memoTX2.Lines.Add('uf_59 = ' + S2206.Items[I].uf_59);
+    memoTX2.Lines.Add('qtdHrsSem_61 = ' + S2206.Items[I].qtdHrsSem_61);
+    memoTX2.Lines.Add('tpJornada_62 = ' + S2206.Items[I].tpJornada_62);
+    memoTX2.Lines.Add('dscTpJorn_63 = ' + S2206.Items[I].dscTpJorn_63);
+    memoTX2.Lines.Add('tmpParc_64 = ' + S2206.Items[I].tmpParc_64);
+    memoTX2.Lines.Add('INCLUIRHORARIO_65');
+    memoTX2.Lines.Add('dia_66 = ' + S2206.Items[I].dia_66);
+    memoTX2.Lines.Add('codHorContrat_67 = ' + S2206.Items[I].codHorContrat_67);
+    memoTX2.Lines.Add('SALVARHORARIO_65');
+    memoTX2.Lines.Add('INCLUIRFILIACAOSINDICAL_68');
+    memoTX2.Lines.Add('cnpjSindTrab_69 = ' + S2206.Items[I].cnpjSindTrab_69);
+    memoTX2.Lines.Add('SALVARFILIACAOSINDICAL_68');
+    memoTX2.Lines.Add('nrProcJud_71 = ' + S2206.Items[I].nrProcJud_71);
+    memoTX2.Lines.Add('mtvAlter_73 = ' + S2206.Items[I].mtvAlter_73);
+    memoTX2.Lines.Add('INCLUIROBSERVACAO_74');
+    memoTX2.Lines.Add('observacao_75 = ' + S2206.Items[I].observacao_75);
+    memoTX2.Lines.Add('SALVAROBSERVACAO_74');
+    memoTX2.Lines.Add('SALVARS2206');
+  end;
+end;
+
+procedure TfrmPrincipal.GeraTX2S2210;
+var
+  Lista: TStringList;
+  ArquivoTXT: TStringList;
+  I,J: Integer;
+  S2210: TS2210;
+begin
+  ArquivoTXT := TStringList.Create;
+  ArquivoTXT.LoadFromFile(FLBOrigem.FileName);
+  memoTX2.Lines.Clear;
+  S2210 := TS2210.Create;
+  S2210.GetS2210(ArquivoTXT);
+  for I := 0 to Pred(S2210.Count) do
+  begin
+    memoTX2.Lines.Add('INCLUIRS2210');
+    memoTX2.Lines.Add('indRetif_4 = ' + S2210.Items[I].indRetif_4);
+    memoTX2.Lines.Add('nrRecibo_5 = ' + S2210.Items[I].nrRecibo_5);
+    memoTX2.Lines.Add('tpAmb_6 = ' + S2210.Items[I].tpAmb_6);
+    memoTX2.Lines.Add('procEmi_7 = ' + S2210.Items[I].procEmi_7);
+    memoTX2.Lines.Add('verProc_8 = ' + S2210.Items[I].verProc_8);
+    memoTX2.Lines.Add('tpRegistrador_10 = ' + S2210.Items[I].tpRegistrador_10);
+    memoTX2.Lines.Add('tpInsc_11 = ' + S2210.Items[I].tpInsc_11);
+    memoTX2.Lines.Add('nrInsc_12 = ' + S2210.Items[I].nrInsc_12);
+    memoTX2.Lines.Add('tpInsc_14 = ' + S2210.Items[I].tpInsc_14);
+    memoTX2.Lines.Add('nrInsc_15 = ' + S2210.Items[I].nrInsc_15);
+    memoTX2.Lines.Add('cpfTrab_17 = ' + S2210.Items[I].cpfTrab_17);
+    memoTX2.Lines.Add('nisTrab_18 = ' + S2210.Items[I].nisTrab_18);
+    memoTX2.Lines.Add('dtAcid_20 = ' + S2210.Items[I].dtAcid_20);
+    memoTX2.Lines.Add('tpAcid_21 = ' + S2210.Items[I].tpAcid_21);
+    memoTX2.Lines.Add('hrAcid_22 = ' + S2210.Items[I].hrAcid_22);
+    memoTX2.Lines.Add('hrsTrabAntesAcid_23 = ' + S2210.Items[I].hrsTrabAntesAcid_23);
+    memoTX2.Lines.Add('tpCat_24 = ' + S2210.Items[I].tpCat_24);
+    memoTX2.Lines.Add('indCatObito_25 = ' + S2210.Items[I].indCatObito_25);
+    memoTX2.Lines.Add('dtObito_26 = ' + S2210.Items[I].dtObito_26);
+    memoTX2.Lines.Add('indComunPolicia_27 = ' + S2210.Items[I].indComunPolicia_27);
+    memoTX2.Lines.Add('codSitGeradora_28 = ' + S2210.Items[I].codSitGeradora_28);
+    memoTX2.Lines.Add('iniciatCAT_29 = ' + S2210.Items[I].iniciatCAT_29);
+    memoTX2.Lines.Add('observacao_30 = ' + S2210.Items[I].observacao_30);
+    memoTX2.Lines.Add('tpLocal_32 = ' + S2210.Items[I].tpLocal_32);
+    memoTX2.Lines.Add('dscLocal_33 = ' + S2210.Items[I].dscLocal_33);
+    memoTX2.Lines.Add('dscLograd_34 = ' + S2210.Items[I].dscLograd_34);
+    memoTX2.Lines.Add('nrLograd_35 = ' + S2210.Items[I].nrLograd_35);
+    memoTX2.Lines.Add('codMunic_36 = ' + S2210.Items[I].codMunic_36);
+    memoTX2.Lines.Add('uf_37 = ' + S2210.Items[I].uf_37);
+    memoTX2.Lines.Add('cnpjLocalAcid_38 = ' + S2210.Items[I].cnpjLocalAcid_38);
+    memoTX2.Lines.Add('pais_39 = ' + S2210.Items[I].pais_39);
+    memoTX2.Lines.Add('codPostal_40 = ' + S2210.Items[I].codPostal_40);
+    memoTX2.Lines.Add('INCLUIRPARTEATINGIDA_41');
+    memoTX2.Lines.Add('codParteAting_42 = ' + S2210.Items[I].codParteAting_42);
+    memoTX2.Lines.Add('lateralidade_43 = ' + S2210.Items[I].lateralidade_43);
+    memoTX2.Lines.Add('SALVARPARTEATINGIDA_41');
+    memoTX2.Lines.Add('INCLUIRAGENTECAUSADOR_44');
+    memoTX2.Lines.Add('codAgntCausador_45 = ' + S2210.Items[I].codAgntCausador_45);
+    memoTX2.Lines.Add('SALVARAGENTECAUSADOR_44');
+    memoTX2.Lines.Add('codCNES_47 = ' + S2210.Items[I].codCNES_47);
+    memoTX2.Lines.Add('dtAtendimento_48 = ' + S2210.Items[I].dtAtendimento_48);
+    memoTX2.Lines.Add('hrAtendimento_49 = ' + S2210.Items[I].hrAtendimento_49);
+    memoTX2.Lines.Add('indInternacao_50 = ' + S2210.Items[I].indInternacao_50);
+    memoTX2.Lines.Add('durTrat_51 = ' + S2210.Items[I].durTrat_51);
+    memoTX2.Lines.Add('indAfast_52 = ' + S2210.Items[I].indAfast_52);
+    memoTX2.Lines.Add('dscLesao_53 = ' + S2210.Items[I].dscLesao_53);
+    memoTX2.Lines.Add('dscCompLesao_54 = ' + S2210.Items[I].dscCompLesao_54);
+    memoTX2.Lines.Add('diagProvavel_55 = ' + S2210.Items[I].diagProvavel_55);
+    memoTX2.Lines.Add('codCID_56 = ' + S2210.Items[I].codCID_56);
+    memoTX2.Lines.Add('observacao_57 = ' + S2210.Items[I].observacao_57);
+    memoTX2.Lines.Add('nmEmit_59 = ' + S2210.Items[I].nmEmit_59);
+    memoTX2.Lines.Add('ideOC_60 = ' + S2210.Items[I].ideOC_60);
+    memoTX2.Lines.Add('nrOc_61 = ' + S2210.Items[I].nrOc_61);
+    memoTX2.Lines.Add('ufOC_62 = ' + S2210.Items[I].ufOC_62);
+    memoTX2.Lines.Add('dtCatOrig_64 = ' + S2210.Items[I].dtCatOrig_64);
+    memoTX2.Lines.Add('nrCatOrig_65 = ' + S2210.Items[I].nrCatOrig_65);
+    memoTX2.Lines.Add('SALVARSS2210');
+  end;
+end;
+
+procedure TfrmPrincipal.GeraTX2S2230;
+var
+  Lista: TStringList;
+  ArquivoTXT: TStringList;
+  I,J: Integer;
+  S2230: TS2230;
+begin
+  ArquivoTXT := TStringList.Create;
+  ArquivoTXT.LoadFromFile(FLBOrigem.FileName);
+  memoTX2.Lines.Clear;
+  S2230 := TS2230.Create;
+  S2230.GetS2230(ArquivoTXT);
+  for I := 0 to Pred(S2230.Count) do
+  begin
+    memoTX2.Lines.Add('INCLUIRS2230');
+    memoTX2.Lines.Add('indRetif_4 = ' + S2230.Items[I].indRetif_4);
+    memoTX2.Lines.Add('nrRecibo_5 = ' + S2230.Items[I].nrRecibo_5);
+    memoTX2.Lines.Add('tpAmb_6 = ' + S2230.Items[I].tpAmb_6);
+    memoTX2.Lines.Add('procEmi_7 = ' + S2230.Items[I].procEmi_7);
+    memoTX2.Lines.Add('verProc_8 = ' + S2230.Items[I].verProc_8);
+    memoTX2.Lines.Add('tpInsc_10 = ' + S2230.Items[I].tpInsc_10);
+    memoTX2.Lines.Add('nrInsc_11 = ' + S2230.Items[I].nrInsc_11);
+    memoTX2.Lines.Add('cpfTrab_13 = ' + S2230.Items[I].cpfTrab_13);
+    memoTX2.Lines.Add('nisTrab_14 = ' + S2230.Items[I].nisTrab_14);
+    memoTX2.Lines.Add('matricula_15 = ' + S2230.Items[I].matricula_15);
+    memoTX2.Lines.Add('codCateg_60 = ' + S2230.Items[I].codCateg_60);
+    memoTX2.Lines.Add('dtIniAfast_18 = ' + S2230.Items[I].dtIniAfast_18);
+    memoTX2.Lines.Add('codMotAfast_19 = ' + S2230.Items[I].codMotAfast_19);
+    memoTX2.Lines.Add('infoMesmoMtv_20 = ' + S2230.Items[I].infoMesmoMtv_20);
+    memoTX2.Lines.Add('tpAcidTransito_21 = ' + S2230.Items[I].tpAcidTransito_21);
+    memoTX2.Lines.Add('observacao_22 = ' + S2230.Items[I].observacao_22);
+    memoTX2.Lines.Add('INCLUIRINFOATESTADO_23');
+    memoTX2.Lines.Add('codCID_24 = ' + S2230.Items[I].codCID_24);
+    memoTX2.Lines.Add('qtdDiasAfast_25 = ' + S2230.Items[I].qtdDiasAfast_25);
+    memoTX2.Lines.Add('nmEmit_27 = ' + S2230.Items[I].nmEmit_27);
+    memoTX2.Lines.Add('ideOC_28 = ' + S2230.Items[I].ideOC_28);
+    memoTX2.Lines.Add('nrOc_29 = ' + S2230.Items[I].nrOc_29);
+    memoTX2.Lines.Add('ufOC_30 = ' + S2230.Items[I].ufOC_30);
+    memoTX2.Lines.Add('SALVARINFOATESTADO_23');
+    memoTX2.Lines.Add('cnpjCess_32 = ' + S2230.Items[I].cnpjCess_32);
+    memoTX2.Lines.Add('infOnus_33 = ' + S2230.Items[I].infOnus_33);
+    memoTX2.Lines.Add('cnpjSind_35 = ' + S2230.Items[I].cnpjSind_35);
+    memoTX2.Lines.Add('infOnusRemun_36 = ' + S2230.Items[I].infOnusRemun_36);
+    memoTX2.Lines.Add('origRetif_57 = ' + S2230.Items[I].origRetif_57);
+    memoTX2.Lines.Add('tpProc_58 = ' + S2230.Items[I].tpProc_58);
+    memoTX2.Lines.Add('nrProc_59 = ' + S2230.Items[I].nrProc_59);
+    memoTX2.Lines.Add('dtTermAfast_53 = ' + S2230.Items[I].dtTermAfast_53);
+    memoTX2.Lines.Add('SALVARSS2230');
+  end;
+end;
+
 procedure TfrmPrincipal.GeraTX2S2250;
 var
   Lista: TStringList;
@@ -1277,9 +1626,100 @@ end;
 
 procedure TfrmPrincipal.RGArqTX2Click(Sender: TObject);
 begin
-  if (FLBOrigem.Count=1) then
+  if FLBOrigem.FileName = EmptyStr then
   begin
-    FLBOrigem.Selected[0] := True;
+    Application.MessageBox('Selecione um arquivo','Atenção',MB_ICONWARNING);
+  end else
+  begin
+    frmPrincipal.Enabled := False;
+    case RGArqTX2.ItemIndex of
+      0: begin
+           if (RGTipoTX2.ItemIndex=0) then
+             GeraTX2S1000 else
+             GeraTX2S1000ALT;
+         end;
+      1: begin
+           if (RGTipoTX2.ItemIndex=0) then
+             GeraTX2S1005 else
+             GeraTX2S1005ALT;
+         end;
+      2: begin
+           if (RGTipoTX2.ItemIndex=0) then
+             GeraTX2S1010 else
+             GeraTX2S1010ALT;
+         end;
+      3: begin
+           if (RGTipoTX2.ItemIndex=0) then
+             GeraTX2S1020 else
+             GeraTX2S1020ALT;
+         end;
+      4: begin
+           if (RGTipoTX2.ItemIndex=0) then
+             GeraTX2S1030 else
+             GeraTX2S1030ALT;
+         end;
+      5: begin
+           if (RGTipoTX2.ItemIndex=0) then
+             GeraTX2S1035 else
+             GeraTX2S1035ALT;
+         end;
+      6: begin
+           if (RGTipoTX2.ItemIndex=0) then
+             GeraTX2S1040 else
+             GeraTX2S1040ALT;
+         end;
+      7: begin
+           if (RGTipoTX2.ItemIndex=0) then
+             GeraTX2S1050 else
+             GeraTX2S1050ALT;
+         end;
+      8: begin
+           if (RGTipoTX2.ItemIndex=0) then
+             GeraTX2S1060 else
+             GeraTX2S1060ALT;
+         end;
+      9: begin
+           if (RGTipoTX2.ItemIndex=0) then
+             GeraTX2S2190 else
+             Application.MessageBox('Não existe arquivo de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
+         end;
+     10: begin
+           if (RGTipoTX2.ItemIndex=0) then
+             GeraTX2S2200 else
+             Application.MessageBox('Não existe arquivo de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
+         end;
+     11: begin
+           if (RGTipoTX2.ItemIndex=0) then
+             GeraTX2S2205 else
+             Application.MessageBox('Não existe arquivo de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
+         end;
+     12: begin
+           if (RGTipoTX2.ItemIndex=0) then
+             GeraTX2S2206 else
+             Application.MessageBox('Não existe arquivo de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
+         end;
+     13: begin
+           if (RGTipoTX2.ItemIndex=0) then
+             GeraTX2S2210 else
+             Application.MessageBox('Não existe arquivo de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
+         end;
+     14: begin
+           if (RGTipoTX2.ItemIndex=0) then
+             GeraTX2S2230 else
+             Application.MessageBox('Não existe arquivo de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
+         end;
+     15: begin
+           if (RGTipoTX2.ItemIndex=0) then
+             GeraTX2S2250 else
+             Application.MessageBox('Não existe arquivo de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
+         end;
+     16: begin
+           if (RGTipoTX2.ItemIndex=0) then
+             GeraTX2S2299 else
+             Application.MessageBox('Não existe arquivo de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
+         end;
+    end;
+    frmPrincipal.Enabled := True;
   end;
 end;
 
