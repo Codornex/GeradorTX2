@@ -3,7 +3,7 @@ unit UTS2306;
 interface
 
 uses
-  Contnrs, System.Classes;
+  Contnrs, System.Classes, StrUtils, SysUtils;
 
 type
   TS2306 = class(TObjectList)
@@ -84,47 +84,47 @@ begin
       ExtractStrings(['|'], [], PChar(Arq[I]), Lista);
       with Add do
       begin
-        indRetif_4 := Lista[1];
-        nrRecibo_5 := Lista[2];
-        tpAmb_6 := Lista[3];
-        procEmi_7 := Lista[4];
-        verProc_8 := Lista[5];
-        tpInsc_10 := Lista[6];
-        nrInsc_11 := Lista[7];
-        cpfTrab_13 := Lista[8];
-        nisTrab_14 := Lista[9];
-        codCateg_15 := Lista[10];
-        dtAlteracao_17 := Lista[11];
-        natAtividade_18 := Lista[12];
-        codCargo_21 := Lista[13];
-        codFuncao_22 := Lista[14];
-        vrSalFx_24 := Lista[15];
-        undSalFixo_25 := Lista[16];
-        dscSalVar_26 := Lista[17];
-        natEstagio_28 := Lista[18];
-        nivEstagio_29 := Lista[19];
-        areaAtuacao_30 := Lista[20];
-        nrApol_31 := Lista[21];
-        vlrBolsa_32 := Lista[22];
-        dtPrevTerm_33 := Lista[23];
-        cnpjInstEnsino_35 := Lista[24];
-        nmRazao_36 := Lista[25];
-        dscLograd_37 := Lista[26];
-        nrLograd_38 := Lista[27];
-        bairro_39 := Lista[28];
-        cep_40 := Lista[29];
-        codMunic_41 := Lista[30];
-        uf_42 := Lista[31];
-        cnpjAgntInteg_44 := Lista[32];
-        nmRazao_45 := Lista[33];
-        dscLograd_46 := Lista[34];
-        nrLograd_47 := Lista[35];
-        bairro_48 := Lista[36];
-        cep_49 := Lista[37];
-        codMunic_50 := Lista[38];
-        uf_51 := Lista[39];
-        cpfSupervisor_53 := Lista[40];
-        nmSuperv_54 := Lista[41];
+        indRetif_4 := IfThen(Trim(Lista[1]) = '', '0', Lista[1]);
+        nrRecibo_5 := IfThen(Trim(Lista[2]) = '', '0', Lista[2]);
+        tpAmb_6 := IfThen(Trim(Lista[3]) = '', '0', Lista[3]);
+        procEmi_7 := IfThen(Trim(Lista[4]) = '', '0', Lista[4]);
+        verProc_8 := IfThen(Trim(Lista[5]) = '', '0', Lista[5]);
+        tpInsc_10 := IfThen(Trim(Lista[6]) = '', '0', Lista[6]);
+        nrInsc_11 := IfThen(Trim(Lista[7]) = '', '0', Lista[7]);
+        cpfTrab_13 := IfThen(Trim(Lista[8]) = '', '0', Lista[8]);
+        nisTrab_14 := IfThen(Trim(Lista[9]) = '', '0', Lista[9]);
+        codCateg_15 := IfThen(Trim(Lista[10]) = '', '0', Lista[10]);
+        dtAlteracao_17 := IfThen(Trim(Lista[11]) = '', '0', Lista[11]);
+        natAtividade_18 := IfThen(Trim(Lista[12]) = '', '0', Lista[12]);
+        codCargo_21 := IfThen(Trim(Lista[13]) = '', '0', Lista[13]);
+        codFuncao_22 := IfThen(Trim(Lista[14]) = '', '0', Lista[14]);
+        vrSalFx_24 := IfThen(Trim(Lista[15]) = '', '0', Lista[15]);
+        undSalFixo_25 := IfThen(Trim(Lista[16]) = '', '0', Lista[16]);
+        dscSalVar_26 := IfThen(Trim(Lista[17]) = '', '0', Lista[17]);
+        natEstagio_28 := IfThen(Trim(Lista[18]) = '', '0', Lista[18]);
+        nivEstagio_29 := IfThen(Trim(Lista[19]) = '', '0', Lista[19]);
+        areaAtuacao_30 := IfThen(Trim(Lista[20]) = '', '0', Lista[20]);
+        nrApol_31 := IfThen(Trim(Lista[21]) = '', '0', Lista[21]);
+        vlrBolsa_32 := IfThen(Trim(Lista[22]) = '', '0', Lista[22]);
+        dtPrevTerm_33 := IfThen(Trim(Lista[23]) = '', '0', Lista[23]);
+        cnpjInstEnsino_35 := IfThen(Trim(Lista[24]) = '', '0', Lista[24]);
+        nmRazao_36 := IfThen(Trim(Lista[25]) = '', '0', Lista[25]);
+        dscLograd_37 := IfThen(Trim(Lista[26]) = '', '0', Lista[26]);
+        nrLograd_38 := IfThen(Trim(Lista[27]) = '', '0', Lista[27]);
+        bairro_39 := IfThen(Trim(Lista[28]) = '', '0', Lista[28]);
+        cep_40 := IfThen(Trim(Lista[29]) = '', '0', Lista[29]);
+        codMunic_41 := IfThen(Trim(Lista[30]) = '', '0', Lista[30]);
+        uf_42 := IfThen(Trim(Lista[31]) = '', '0', Lista[31]);
+        cnpjAgntInteg_44 := IfThen(Trim(Lista[32]) = '', '0', Lista[32]);
+        nmRazao_45 := IfThen(Trim(Lista[33]) = '', '0', Lista[33]);
+        dscLograd_46 := IfThen(Trim(Lista[34]) = '', '0', Lista[34]);
+        nrLograd_47 := IfThen(Trim(Lista[35]) = '', '0', Lista[35]);
+        bairro_48 := IfThen(Trim(Lista[36]) = '', '0', Lista[36]);
+        cep_49 := IfThen(Trim(Lista[37]) = '', '0', Lista[37]);
+        codMunic_50 := IfThen(Trim(Lista[38]) = '', '0', Lista[38]);
+        uf_51 := IfThen(Trim(Lista[39]) = '', '0', Lista[39]);
+        cpfSupervisor_53 := IfThen(Trim(Lista[40]) = '', '0', Lista[40]);
+        nmSuperv_54 := IfThen(Trim(Lista[41]) = '', '0', Lista[41]);
       end;
       Lista.Free;
     end;
