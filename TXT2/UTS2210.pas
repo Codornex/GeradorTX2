@@ -3,7 +3,7 @@ unit UTS2210;
 interface
 
 uses
-  Contnrs, System.Classes;
+  Contnrs, System.Classes, unUtils;
 
 type
   TS2210 = class(TObjectList)

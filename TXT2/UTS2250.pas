@@ -3,7 +3,7 @@ unit UTS2250;
 interface
 
 uses
-  Contnrs, System.Classes;
+  Contnrs, System.Classes, unUtils;
 
 type
   TS2250 = class(TObjectList)
@@ -51,7 +51,9 @@ procedure TS2250.GetS2250(const Arq: TStringList);
 var
   I: Integer;
   Lista: TStringList;
+  Utils: TUtils;
 begin
+  Utils := TUtils.Create;
   inherited Clear;
   for I := 0 to Pred(Arq.Count) do
     if Copy(Arq[I],0,Pred(Pos('|',Arq[I]))) = 'S2250'then
@@ -60,23 +62,23 @@ begin
       ExtractStrings(['|'],[],PChar(Arq[I]),Lista);
       with Add do
       begin
-        indRetif_4 := Lista[1];
-        nrRecibo_5 := Lista[2];
-        tpAmb_6 := Lista[3];
-        procEmi_7 := Lista[4];
-        verProc_8 := Lista[5];
-        tpInsc_10 := Lista[6];
-        nrInsc_11 := Lista[7];
-        cpfTrab_13 := Lista[8];
-        nisTrab_14 := Lista[9];
-        matricula_15 := Lista[10];
-        dtAvPrv_18 := Lista[11];
-        dtPrevDeslig_19 := Lista[12];
-        tpAvPrevio_20 := Lista[13];
-        observacao_21 := Lista[14];
-        dtCancAvPrv_23 := Lista[15];
-        observacao_24 := Lista[16];
-        mtvCancAvPrevio_25 := Lista[17];
+        indRetif_4 := Utils.RemoveZerosEsp(Lista[1]);
+        nrRecibo_5 := Utils.RemoveZerosEsp(Lista[2]);
+        tpAmb_6 := Utils.RemoveZerosEsp(Lista[3]);
+        procEmi_7 := Utils.RemoveZerosEsp(Lista[4]);
+        verProc_8 := Utils.RemoveZerosEsp(Lista[5]);
+        tpInsc_10 := Utils.RemoveZerosEsp(Lista[6]);
+        nrInsc_11 := Utils.RemoveZerosEsp(Lista[7]);
+        cpfTrab_13 := Utils.RemoveZerosEsp(Lista[8]);
+        nisTrab_14 := Utils.RemoveZerosEsp(Lista[9]);
+        matricula_15 := Utils.RemoveZerosEsp(Lista[10]);
+        dtAvPrv_18 := Utils.RemoveZerosEsp(Lista[11]);
+        dtPrevDeslig_19 := Utils.RemoveZerosEsp(Lista[12]);
+        tpAvPrevio_20 := Utils.RemoveZerosEsp(Lista[13]);
+        observacao_21 := Utils.RemoveZerosEsp(Lista[14]);
+        dtCancAvPrv_23 := Utils.RemoveZerosEsp(Lista[15]);
+        observacao_24 := Utils.RemoveZerosEsp(Lista[16]);
+        mtvCancAvPrevio_25 := Utils.RemoveZerosEsp(Lista[17]);
       end;
       Lista.Free;
     end;

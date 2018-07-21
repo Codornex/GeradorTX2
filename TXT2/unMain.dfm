@@ -3,7 +3,7 @@ object frmMain: TfrmMain
   Top = 0
   Caption = 'Principal'
   ClientHeight = 576
-  ClientWidth = 1226
+  ClientWidth = 1229
   Color = clBtnFace
   Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
@@ -12,31 +12,28 @@ object frmMain: TfrmMain
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
-  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 15
   object StatusBar1: TStatusBar
     Left = 0
     Top = 557
-    Width = 1226
+    Width = 1229
     Height = 19
     Panels = <>
-    ExplicitWidth = 1230
   end
   object Panel1: TPanel
     Left = 0
     Top = 494
-    Width = 1226
+    Width = 1229
     Height = 63
     Align = alBottom
     BevelOuter = bvNone
     TabOrder = 1
-    ExplicitWidth = 1230
     DesignSize = (
-      1226
+      1229
       63)
     object sbGeraTx2: TSpeedButton
-      Left = 2
+      Left = 8
       Top = 25
       Width = 154
       Height = 32
@@ -180,12 +177,13 @@ object frmMain: TfrmMain
         6C57000000000000000000000000000000000000000000000000000000000000
         000000000000}
       ParentFont = False
+      OnClick = sbGeraTx2Click
     end
     object sbConfig: TSpeedButton
       Left = 168
-      Top = 5
+      Top = 16
       Width = 43
-      Height = 52
+      Height = 41
       Hint = 'Configura'#231#245'es'
       Flat = True
       Glyph.Data = {
@@ -327,23 +325,21 @@ object frmMain: TfrmMain
     object GroupBox1: TGroupBox
       Left = 551
       Top = 6
-      Width = 666
+      Width = 669
       Height = 52
       Anchors = [akLeft, akTop, akRight]
       Caption = ' Certificado '
       TabOrder = 0
-      ExplicitWidth = 670
       DesignSize = (
-        666
+        669
         52)
       object cbCertificado: TComboBox
         Left = 9
         Top = 20
-        Width = 647
+        Width = 650
         Height = 23
         Anchors = [akLeft, akTop, akRight]
         TabOrder = 0
-        ExplicitWidth = 645
       end
     end
     object GroupBox2: TGroupBox
@@ -356,53 +352,30 @@ object frmMain: TfrmMain
       DesignSize = (
         322
         52)
-      object Label1: TLabel
-        Left = 191
-        Top = 23
-        Width = 23
-        Height = 15
-        Anchors = [akTop, akRight]
-        Caption = 'M'#234's'
-      end
       object Empresa: TLabel
-        Left = 13
+        Left = 10
         Top = 23
         Width = 51
         Height = 15
         Anchors = [akTop, akRight]
         Caption = 'Empresa'
       end
-      object Label2: TLabel
-        Left = 249
-        Top = 23
-        Width = 21
-        Height = 15
-        Anchors = [akTop, akRight]
-        Caption = 'Ano'
-      end
       object cbEmpresa: TComboBox
-        Left = 70
+        Left = 67
         Top = 20
-        Width = 115
+        Width = 102
         Height = 23
         Anchors = [akTop, akRight]
         TabOrder = 0
       end
-      object edtMes: TEdit
-        Left = 220
+      object DTOrigemTXT: TDateTimePicker
+        Left = 175
         Top = 20
-        Width = 23
+        Width = 140
         Height = 23
-        Anchors = [akTop, akRight]
+        Date = 43299.959670717600000000
+        Time = 43299.959670717600000000
         TabOrder = 1
-      end
-      object edtAno: TEdit
-        Left = 276
-        Top = 20
-        Width = 36
-        Height = 23
-        Anchors = [akTop, akRight]
-        TabOrder = 2
       end
     end
     object rbInclusao: TRadioButton
@@ -440,7 +413,6 @@ object frmMain: TfrmMain
       Align = alClient
       Caption = ' Registros E-Social '
       TabOrder = 0
-      ExplicitHeight = 417
       object tvESocial: TTreeView
         Left = 2
         Top = 17
@@ -588,8 +560,8 @@ object frmMain: TfrmMain
           007300200064006F0020004900520052004600200063006F006E0073006F006C
           00690064006100640061007300200070006F007200200063006F006E00740072
           0069006200750069006E00740065007300}
-        ExplicitLeft = -2
-        ExplicitTop = -15
+        ExplicitLeft = 3
+        ExplicitTop = 0
       end
     end
     object gbArqTXTOrigem: TGroupBox
@@ -609,43 +581,39 @@ object frmMain: TfrmMain
         ItemHeight = 13
         Mask = '*.txt'
         TabOrder = 0
-        ExplicitWidth = 271
       end
     end
   end
   object Panel3: TPanel
     Left = 392
     Top = 0
-    Width = 834
+    Width = 837
     Height = 494
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 3
-    ExplicitWidth = 838
     object gbArqTXT: TGroupBox
       Left = 0
       Top = 0
-      Width = 834
+      Width = 837
       Height = 190
       Align = alTop
       Caption = ' Arquivo TXT'
       TabOrder = 0
       Visible = False
-      ExplicitWidth = 838
       object TPanel
         Left = 2
         Top = 147
-        Width = 830
+        Width = 833
         Height = 41
         Align = alBottom
         BevelInner = bvLowered
         TabOrder = 0
-        ExplicitWidth = 834
       end
       object DBGrid1: TDBGrid
         Left = 2
         Top = 17
-        Width = 830
+        Width = 833
         Height = 130
         Align = alClient
         TabOrder = 1
@@ -659,17 +627,16 @@ object frmMain: TfrmMain
     object Panel5: TPanel
       Left = 0
       Top = 453
-      Width = 834
+      Width = 837
       Height = 41
       Align = alBottom
       BevelInner = bvLowered
       TabOrder = 1
-      ExplicitWidth = 838
       DesignSize = (
-        834
+        837
         41)
       object sbCopiarTX2: TSpeedButton
-        Left = 728
+        Left = 731
         Top = 6
         Width = 103
         Height = 30
@@ -696,20 +663,18 @@ object frmMain: TfrmMain
     object gbArqTX2: TGroupBox
       Left = 0
       Top = 190
-      Width = 834
+      Width = 837
       Height = 263
       Align = alClient
       Caption = 'Arquivo TX2'
       TabOrder = 2
-      ExplicitWidth = 838
       object memoTX2: TMemo
         Left = 2
         Top = 17
-        Width = 830
+        Width = 833
         Height = 244
         Align = alClient
         TabOrder = 0
-        ExplicitWidth = 834
       end
     end
   end
@@ -717,7 +682,7 @@ object frmMain: TfrmMain
     Left = 328
     Top = 24
     Bitmap = {
-      494C010102000800780010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010102000800840010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000010000
       0004000000040000000300000004000000040000000400000003000000030000

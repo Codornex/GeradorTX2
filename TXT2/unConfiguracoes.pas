@@ -21,6 +21,7 @@ type
     procedure sbSelectDirectTX2Click(Sender: TObject);
     procedure bConfirmarClick(Sender: TObject);
     procedure sbSelectDirectTXTClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -29,7 +30,7 @@ type
 
 var
   frmConfiguracoes: TfrmConfiguracoes;
-  _DirTX2: TInifile;
+  _DirTXTTX2: TInifile;
 
 implementation
 
@@ -52,10 +53,22 @@ procedure TfrmConfiguracoes.bConfirmarClick(Sender: TObject);
 begin
   if (edtDiretorioTX2.Text<>'') then
   begin
-    _DirTX2 := TIniFile.Create(ExtractFilePath(Application.ExeName)+'\ConfigTX2.ini');
-    _DirTX2.WriteString('Config', 'DirTX2', edtDiretorioTX2.Text);
-    _DirTX2.WriteString('Config', 'DirTXT', edtDiretorioTXT.Text);
-    _DirTX2.Free;
+    _DirTXTTX2 := TIniFile.Create(ExtractFilePath(Application.ExeName)+'\ConfigTX2.ini');
+    _DirTXTTX2.WriteString('Config', 'DirTX2', edtDiretorioTX2.Text);
+    _DirTXTTX2.WriteString('Config', 'DirTXT', edtDiretorioTXT.Text);
+    _DirTXTTX2.Free;
+  end;
+  Close;
+end;
+
+procedure TfrmConfiguracoes.FormCreate(Sender: TObject);
+begin
+  if (FileExists(ExtractFilePath(Application.ExeName)+'\ConfigTX2.ini')) then
+  begin
+    _DirTXTTX2 := TIniFile.Create(ExtractFilePath(Application.ExeName)+'\ConfigTX2.ini');
+    edtDiretorioTX2.Text := _DirTXTTX2.ReadString('Config', 'DirTX2', '');
+    edtDiretorioTXT.Text := _DirTXTTX2.ReadString('Config', 'DirTXT', '');
+    _DirTXTTX2.Free;
   end;
 end;
 

@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.StdCtrls, Vcl.ExtCtrls,
   System.ImageList, Vcl.ImgList, Vcl.Buttons, Data.DB, Vcl.Grids, Vcl.DBGrids,
-  Vcl.FileCtrl;
+  Vcl.FileCtrl, IniFiles;
 
 type
   TfrmMain = class(TForm)
@@ -27,17 +27,14 @@ type
     GroupBox1: TGroupBox;
     cbCertificado: TComboBox;
     GroupBox2: TGroupBox;
-    Label1: TLabel;
     Empresa: TLabel;
     cbEmpresa: TComboBox;
-    edtMes: TEdit;
-    edtAno: TEdit;
-    Label2: TLabel;
     sbConfig: TSpeedButton;
     rbInclusao: TRadioButton;
     rbAlteracao: TRadioButton;
     gbArqTXTOrigem: TGroupBox;
     FLBOrigem: TFileListBox;
+    DTOrigemTXT: TDateTimePicker;
     procedure GeraTX2S1000;
     procedure GeraTX2S1000ALT;
     procedure GeraTX2S1005;
@@ -48,9 +45,14 @@ type
     procedure GeraTX2S2190;
     procedure GeraTX2S2200;
     procedure BitBtn1Click(Sender: TObject);
-    procedure FormShow(Sender: TObject);
     procedure sbConfigClick(Sender: TObject);
     procedure tvESocialDblClick(Sender: TObject);
+    procedure geraTX2;
+    function GetINI: Boolean;
+    procedure sbGeraTx2Click(Sender: TObject);
+    procedure GetTXT;
+    procedure GetTXTInclusaoAlteracao(sTipoS: string);
+    procedure CheckESocial(iESocial: integer);
   private
     { Private declarations }
   public
@@ -59,7 +61,8 @@ type
 
 var
   frmMain: TfrmMain;
-  sDirTX2: String;
+  sDirTX2,
+  sDirTXT: String;
 
 implementation
 
@@ -73,20 +76,7 @@ begin
   tvESocial.Items.Item[1].ImageIndex := 1;
 end;
 
-procedure TfrmMain.FormShow(Sender: TObject);
-begin
-  edtMes.Text := FormatDateTime('MM',Now);
-  edtAno.Text := FormatDateTime('YYYY',Now);
-end;
-
-procedure TfrmMain.sbConfigClick(Sender: TObject);
-begin
-  frmConfiguracoes := TfrmConfiguracoes.Create(frmConfiguracoes);
-  frmConfiguracoes.ShowModal;
-  FreeAndNil(frmConfiguracoes);
-end;
-
-procedure TfrmMain.tvESocialDblClick(Sender: TObject);
+procedure TfrmMain.geraTX2;
 begin
   case (tvESocial.Selected.Index) of
     0: begin
@@ -123,6 +113,26 @@ begin
            GeraTX2S2200;
        end;
   end;
+end;
+
+procedure TfrmMain.sbConfigClick(Sender: TObject);
+begin
+  frmConfiguracoes := TfrmConfiguracoes.Create(frmConfiguracoes);
+  frmConfiguracoes.ShowModal;
+  FreeAndNil(frmConfiguracoes);
+end;
+
+procedure TfrmMain.sbGeraTx2Click(Sender: TObject);
+begin
+  if (getINI) then
+  begin
+    GetTXT;
+  end;
+end;
+
+procedure TfrmMain.tvESocialDblClick(Sender: TObject);
+begin
+  geraTX2;
 end;
 
 procedure TfrmMain.GeraTX2S1000;
@@ -555,6 +565,143 @@ begin
     memoTX2.Lines.Add('observacao_205= ' + S2200.Items[I].observacao_205);
     memoTX2.Lines.Add('SALVAROBSERVACAO_204');
     memoTX2.Lines.Add('SALVARS2200');
+  end;
+end;
+
+function TfrmMain.getINI: Boolean;
+begin
+  if (FileExists(ExtractFilePath(Application.ExeName)+'\ConfigTX2.ini')) then
+  begin
+    _DirTXTTX2 := TIniFile.Create(ExtractFilePath(Application.ExeName)+'\ConfigTX2.ini');
+    sDirTX2 := _DirTXTTX2.ReadString('Config', 'DirTX2', '');
+    sDirTXT := _DirTXTTX2.ReadString('Config', 'DirTXT', '');
+    _DirTXTTX2.Free;
+    if (sDirTX2='') then
+      Result := False else
+      Result := True;
+  end else
+  begin
+    Result := False;
+    frmConfiguracoes := TfrmConfiguracoes.Create(frmConfiguracoes);
+    frmConfiguracoes.ShowModal;
+    FreeAndNil(frmConfiguracoes);
+  end;
+end;
+
+procedure TfrmMain.GetTXTInclusaoAlteracao(sTipoS: string);
+var arq: TextFile;
+    linha,
+    sTipoArq,
+    sMsg,
+    sDTXT: string;
+begin
+  if (sTipoS='I') then
+  begin
+    sDTXT := (sDirTXT+'\EI'+FormatDateTime('DDMMYY',DTOrigemTXT.DateTime)+'.txt');
+    if FileExists(sDTXT) then
+    begin
+      AssignFile(arq, sDTXT);
+    end else
+    begin
+      sMsg := 'Arquivo não encontrado no local especificado¹.'+#13+'1. Local especificado: '+sDTXT+#13+#13+'Deseja verificar ?';
+      if (Application.MessageBox(PCHAR(sMsg),'Atenção',MB_YESNO+MB_ICONQUESTION)=IDYES) then
+      begin
+        frmConfiguracoes := TfrmConfiguracoes.Create(frmConfiguracoes);
+        frmConfiguracoes.ShowModal;
+        FreeAndNil(frmConfiguracoes);
+        Exit;
+      end else
+      begin
+        Exit;
+      end;
+    end;
+  end else
+  if (sTipoS='A') then
+  begin
+    sDTXT := (sDirTXT+'\EA'+FormatDateTime('DDMMYY',DTOrigemTXT.DateTime)+'.txt');
+    if FileExists(sDTXT) then
+    begin
+      AssignFile(arq, sDTXT);
+    end else
+    begin
+      sMsg := 'Arquivo não encontrado no local especificado, deseja alterar ?'+#13+'Local especificado: '+sDTXT;
+      if (Application.MessageBox(PCHAR(sMsg),'Atenção',MB_YESNO+MB_ICONQUESTION)=IDYES) then
+      begin
+        frmConfiguracoes := TfrmConfiguracoes.Create(frmConfiguracoes);
+        frmConfiguracoes.ShowModal;
+        FreeAndNil(frmConfiguracoes);
+        Exit;
+      end else
+      begin
+        Exit;
+      end;
+    end;
+  end;
+
+  {$I-}
+  Reset(arq);
+  {$I+}
+
+  if (IOResult <> 0) then
+  begin
+    Application.MessageBox('Erro na abertura do arquivo','Atenção',MB_OK+MB_ICONERROR);
+  end else
+  begin
+    while (not Eof(arq)) do
+    begin
+      readln(arq, linha);
+      CheckESocial(StrToInt(Copy(linha,2,4)));
+    end;
+    CloseFile(arq);
+  end;
+end;
+
+procedure TfrmMain.CheckESocial(iESocial: integer);
+begin
+  case (iESocial) of
+    1010: tvESocial.Items[0].ImageIndex := 1;
+    1020: tvESocial.Items[0].ImageIndex := 1;
+    1030: tvESocial.Items[0].ImageIndex := 1;
+    1035: tvESocial.Items[0].ImageIndex := 1;
+    1040: tvESocial.Items[0].ImageIndex := 1;
+    1050: tvESocial.Items[0].ImageIndex := 1;
+    1060: tvESocial.Items[0].ImageIndex := 1;
+    1070: tvESocial.Items[0].ImageIndex := 1;
+    1080: tvESocial.Items[0].ImageIndex := 1;
+    2190: tvESocial.Items[0].ImageIndex := 1;
+    2200: tvESocial.Items[0].ImageIndex := 1;
+    2205: tvESocial.Items[0].ImageIndex := 1;
+    2206: tvESocial.Items[0].ImageIndex := 1;
+    2210: tvESocial.Items[0].ImageIndex := 1;
+    2220: tvESocial.Items[0].ImageIndex := 1;
+    2230: tvESocial.Items[0].ImageIndex := 1;
+    2240: tvESocial.Items[0].ImageIndex := 1;
+    2241: tvESocial.Items[0].ImageIndex := 1;
+    2250: tvESocial.Items[0].ImageIndex := 1;
+    2260: tvESocial.Items[0].ImageIndex := 1;
+    2298: tvESocial.Items[0].ImageIndex := 1;
+    2299: tvESocial.Items[0].ImageIndex := 1;
+    2300: tvESocial.Items[0].ImageIndex := 1;
+    2306: tvESocial.Items[0].ImageIndex := 1;
+    2399: tvESocial.Items[0].ImageIndex := 1;
+    2400: tvESocial.Items[0].ImageIndex := 1;
+    3000: tvESocial.Items[0].ImageIndex := 1;
+    5001: tvESocial.Items[0].ImageIndex := 1;
+    5002: tvESocial.Items[0].ImageIndex := 1;
+    5011: tvESocial.Items[0].ImageIndex := 1;
+    5012: tvESocial.Items[0].ImageIndex := 1;
+  end;
+end;
+
+procedure TfrmMain.GetTXT;
+begin
+  if (rbInclusao.Checked) then
+  begin
+    GetTXTInclusaoAlteracao('I');
+  end else
+  if (rbAlteracao.Checked) then
+  begin
+    GetTXTInclusaoAlteracao('A');
   end;
 end;
 
