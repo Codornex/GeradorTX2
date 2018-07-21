@@ -156,6 +156,7 @@ object frmPrincipal: TfrmPrincipal
         'Altera'#231#227'o')
       ParentFont = False
       TabOrder = 1
+      OnClick = RGArqTX2Click
     end
     object GroupBox1: TGroupBox
       Left = 0

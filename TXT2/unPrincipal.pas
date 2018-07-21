@@ -1504,42 +1504,42 @@ begin
       9: begin
            if (RGTipoTX2.ItemIndex=0) then
              GeraTX2S2190 else
-             Application.MessageBox('Não existe arquivo de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
+             Application.MessageBox('Não existe arquivo TX2 de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
          end;
      10: begin
            if (RGTipoTX2.ItemIndex=0) then
              GeraTX2S2200 else
-             Application.MessageBox('Não existe arquivo de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
+             Application.MessageBox('Não existe arquivo TX2 de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
          end;
      11: begin
            if (RGTipoTX2.ItemIndex=0) then
              GeraTX2S2205 else
-             Application.MessageBox('Não existe arquivo de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
+             Application.MessageBox('Não existe arquivo TX2 de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
          end;
      12: begin
            if (RGTipoTX2.ItemIndex=0) then
              GeraTX2S2206 else
-             Application.MessageBox('Não existe arquivo de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
+             Application.MessageBox('Não existe arquivo TX2 de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
          end;
      13: begin
            if (RGTipoTX2.ItemIndex=0) then
              GeraTX2S2210 else
-             Application.MessageBox('Não existe arquivo de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
+             Application.MessageBox('Não existe arquivo TX2 de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
          end;
      14: begin
            if (RGTipoTX2.ItemIndex=0) then
              GeraTX2S2230 else
-             Application.MessageBox('Não existe arquivo de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
+             Application.MessageBox('Não existe arquivo TX2 de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
          end;
      15: begin
            if (RGTipoTX2.ItemIndex=0) then
              GeraTX2S2250 else
-             Application.MessageBox('Não existe arquivo de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
+             Application.MessageBox('Não existe arquivo TX2 de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
          end;
      16: begin
            if (RGTipoTX2.ItemIndex=0) then
              GeraTX2S2299 else
-             Application.MessageBox('Não existe arquivo de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
+             Application.MessageBox('Não existe arquivo TX2 de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
          end;
     end;
     frmPrincipal.Enabled := True;
