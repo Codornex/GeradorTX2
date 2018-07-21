@@ -3,7 +3,7 @@ unit UTS1050ALT;
 interface
 
 uses
-  Contnrs, System.Classes;
+  Contnrs, System.Classes, unUtils;
 
 type
   TS1050ALT = class(TObjectList)
@@ -52,7 +52,9 @@ procedure TS1050ALT.GetS1050ALT(const Arq: TStringList);
 var
   I: Integer;
   Lista: TStringList;
+  Utils: TUtils;
 begin
+  Utils := TUtils.Create;
   inherited Clear;
   for I := 0 to Pred(Arq.Count) do
     if Copy(Arq[I],0,Pred(Pos('|',Arq[I]))) = 'S1050'then
@@ -61,24 +63,24 @@ begin
       ExtractStrings(['|'],[],PChar(Arq[I]),Lista);
       with Add do
       begin
-        tpAmb_4  := Lista[1];
-        procEmi_5  := Lista[2];
-        verProc_6  := Lista[3];
-        tpInsc_8  := Lista[4];
-        nrInsc_9  := Lista[5];
-        codHorContrat_13  := Lista[6];
-        iniValid_14  := Lista[7];
-        fimValid_15  := Lista[8];
-        hrEntr_17  := Lista[9];
-        hrSaida_18  := Lista[10];
-        durJornada_19  := Lista[11];
-        perHorFlexivel_20  := Lista[12];
-        tpInterv_22 := Lista[13];
-        durInterv_23 := Lista[14];
-        iniInterv_24 := Lista[15];
-        termInterv_25 := Lista[16];
-        iniValid_26 := Lista[17];
-        fimValid_27 := Lista[18];
+        tpAmb_4  := Utils.RemoveZerosEsp(Lista[1]);
+        procEmi_5  := Utils.RemoveZerosEsp(Lista[2]);
+        verProc_6  := Utils.RemoveZerosEsp(Lista[3]);
+        tpInsc_8  := Utils.RemoveZerosEsp(Lista[4]);
+        nrInsc_9  := Utils.RemoveZerosEsp(Lista[5]);
+        codHorContrat_13  := Utils.RemoveZerosEsp(Lista[6]);
+        iniValid_14  := Utils.RemoveZerosEsp(Lista[7]);
+        fimValid_15  := Utils.RemoveZerosEsp(Lista[8]);
+        hrEntr_17  := Utils.RemoveZerosEsp(Lista[9]);
+        hrSaida_18  := Utils.RemoveZerosEsp(Lista[10]);
+        durJornada_19  := Utils.RemoveZerosEsp(Lista[11]);
+        perHorFlexivel_20  := Utils.RemoveZerosEsp(Lista[12]);
+        tpInterv_22 := Utils.RemoveZerosEsp(Lista[13]);
+        durInterv_23 := Utils.RemoveZerosEsp(Lista[14]);
+        iniInterv_24 := Utils.RemoveZerosEsp(Lista[15]);
+        termInterv_25 := Utils.RemoveZerosEsp(Lista[16]);
+        iniValid_26 := Utils.RemoveZerosEsp(Lista[17]);
+        fimValid_27 := Utils.RemoveZerosEsp(Lista[18]);
       end;
       Lista.Free;
     end;

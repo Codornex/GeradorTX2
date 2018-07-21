@@ -3,7 +3,7 @@ unit UTS1010;
 interface
 
 uses
-  Contnrs, System.Classes;
+  Contnrs, System.Classes, unUtils;
 
 type
   TS1010 = class(TObjectList)
@@ -51,7 +51,9 @@ procedure TS1010.GetS1010(const Arq: TStringList);
 var
   I: Integer;
   Lista: TStringList;
+  Utils: TUtils;
 begin
+  Utils := TUtils.Create;
   inherited Clear;
   for I := 0 to Pred(Arq.Count) do
     if Copy(Arq[I],0,Pred(Pos('|',Arq[I]))) = 'S1010'then
@@ -60,23 +62,23 @@ begin
       ExtractStrings(['|'],[],PChar(Arq[I]),Lista);
       with Add do
       begin
-        tpAmb_4  := Lista[1];
-        procEmi_5  := Lista[2];
-        verProc_6  := Lista[3];
-        tpInsc_8  := Lista[4];
-        nrInsc_9  := Lista[5];
-        codRubr_13  := Lista[6];
-        ideTabRubr_14  := Lista[7];
-        iniValid_15  := Lista[8];
-        fimValid_16  := Lista[9];
-        dscRubr_18  := Lista[10];
-        natRubr_19  := Lista[11];
-        tpRubr_20  := Lista[12];
-        codIncCP_21  := Lista[13];
-        codIncIRRF_22  := Lista[14];
-        codIncFGTS_23  := Lista[15];
-        codIncSIND_24  := Lista[16];
-        observacao_29  := Lista[17];
+        tpAmb_4 := Utils.RemoveZerosEsp(Lista[1]);
+        procEmi_5 := Utils.RemoveZerosEsp(Lista[2]);
+        verProc_6 := Utils.RemoveZerosEsp(Lista[3]);
+        tpInsc_8 := Utils.RemoveZerosEsp(Lista[4]);
+        nrInsc_9 := Utils.RemoveZerosEsp(Lista[5]);
+        codRubr_13 := Utils.RemoveZerosEsp(Lista[6]);
+        ideTabRubr_14 := Utils.RemoveZerosEsp(Lista[7]);
+        iniValid_15 := Utils.RemoveZerosEsp(Lista[8]);
+        fimValid_16 := Utils.RemoveZerosEsp(Lista[9]);
+        dscRubr_18 := Utils.RemoveZerosEsp(Lista[10]);
+        natRubr_19 := Utils.RemoveZerosEsp(Lista[11]);
+        tpRubr_20 := Utils.RemoveZerosEsp(Lista[12]);
+        codIncCP_21 := Utils.RemoveZerosEsp(Lista[13]);
+        codIncIRRF_22 := Utils.RemoveZerosEsp(Lista[14]);
+        codIncFGTS_23 := Utils.RemoveZerosEsp(Lista[15]);
+        codIncSIND_24 := Utils.RemoveZerosEsp(Lista[16]);
+        observacao_29 := Utils.RemoveZerosEsp(Lista[17]);
       end;
       Lista.Free;
     end;

@@ -3,7 +3,7 @@ unit UTS1060ALT;
 interface
 
 uses
-  Contnrs, System.Classes;
+  Contnrs, System.Classes, unUtils;
 
 type
   TS1060ALT = class(TObjectList)
@@ -49,7 +49,9 @@ procedure TS1060ALT.GetS1060ALT(const Arq: TStringList);
 var
   I: Integer;
   Lista: TStringList;
+  Utils: TUtils;
 begin
+  Utils := TUtils.Create;
   inherited Clear;
   for I := 0 to Pred(Arq.Count) do
     if Copy(Arq[I],0,Pred(Pos('|',Arq[I]))) = 'S1060' then
@@ -58,21 +60,21 @@ begin
       ExtractStrings(['|'],[],PChar(Arq[I]),Lista);
       with Add do
       begin
-        tpAmb_4 := Lista[1];
-        procEmi_5 := Lista[2];
-        verProc_6 := Lista[3];
-        tpInsc_8 := Lista[4];
-        nrInsc_9 := Lista[5];
-        codAmb_13 := Lista[6];
-        iniValid_14 := Lista[7];
-        fimValid_15 := Lista[8];
-        dscAmb_17 := Lista[9];
-        localAmb_18 := Lista[10];
-        tpInsc_19 := Lista[11];
-        nrInsc_20 := Lista[12];
-        codFatRis_22 := Lista[13];
-        iniValid_23 := Lista[14];
-        fimValid_24 := Lista[15];
+        tpAmb_4 := Utils.RemoveZerosEsp(Lista[1]);
+        procEmi_5 := Utils.RemoveZerosEsp(Lista[2]);
+        verProc_6 := Utils.RemoveZerosEsp(Lista[3]);
+        tpInsc_8 := Utils.RemoveZerosEsp(Lista[4]);
+        nrInsc_9 := Utils.RemoveZerosEsp(Lista[5]);
+        codAmb_13 := Utils.RemoveZerosEsp(Lista[6]);
+        iniValid_14 := Utils.RemoveZerosEsp(Lista[7]);
+        fimValid_15 := Utils.RemoveZerosEsp(Lista[8]);
+        dscAmb_17 := Utils.RemoveZerosEsp(Lista[9]);
+        localAmb_18 := Utils.RemoveZerosEsp(Lista[10]);
+        tpInsc_19 := Utils.RemoveZerosEsp(Lista[11]);
+        nrInsc_20 := Utils.RemoveZerosEsp(Lista[12]);
+        codFatRis_22 := Utils.RemoveZerosEsp(Lista[13]);
+        iniValid_23 := Utils.RemoveZerosEsp(Lista[14]);
+        fimValid_24 := Utils.RemoveZerosEsp(Lista[15]);
       end;
       Lista.Free;
     end;

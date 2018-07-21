@@ -3,7 +3,7 @@ unit UTS1010ALT;
 interface
 
 uses
-  Contnrs, System.Classes;
+  Contnrs, System.Classes, unUtils;
 
 type
   TS1010ALT = class(TObjectList)
@@ -61,7 +61,9 @@ procedure TS1010ALT.GetS1010ALT(const Arq: TStringList);
 var
   I: Integer;
   Lista: TStringList;
+  Utils: TUtils;
 begin
+  Utils := TUtils.Create;
   inherited Clear;
   for I := 0 to Pred(Arq.Count) do
     if Copy(Arq[I],0,Pred(Pos('|',Arq[I]))) = 'S1010'then
@@ -70,33 +72,33 @@ begin
       ExtractStrings(['|'],[],PChar(Arq[I]),Lista);
       with Add do
       begin
-        tpAmb_4  := Lista[1];
-        procEmi_5  := Lista[2];
-        verProc_6  := Lista[3];
-        tpInsc_8  := Lista[4];
-        nrInsc_9  := Lista[5];
-        codRubr_13  := Lista[6];
-        ideTabRubr_14  := Lista[7];
-        iniValid_15  := Lista[8];
-        fimValid_16  := Lista[9];
-        dscRubr_18  := Lista[10];
-        natRubr_19  := Lista[11];
-        tpRubr_20  := Lista[12];
-        codIncCP_21  := Lista[13];
-        codIncIRRF_22  := Lista[14];
-        codIncFGTS_23  := Lista[15];
-        codIncSIND_24  := Lista[16];
-        observacao_29  := Lista[17];
-        tpProc_31 := Lista[18];
-        nrProc_32 := Lista[19];
-        extDecisao_33 := Lista[20];
-        codSusp_34 := Lista[21];
-        nrProc_36 := Lista[22];
-        codSusp_37 := Lista[23];
-        nrProc_39 := Lista[24];
-        nrProc_42 := Lista[25];
-        iniValid_44 := Lista[26];
-        fimValid_45 := Lista[27];
+        tpAmb_4  := Utils.RemoveZerosEsp(Lista[1]);
+        procEmi_5  := Utils.RemoveZerosEsp(Lista[2]);
+        verProc_6  := Utils.RemoveZerosEsp(Lista[3]);
+        tpInsc_8  := Utils.RemoveZerosEsp(Lista[4]);
+        nrInsc_9  := Utils.RemoveZerosEsp(Lista[5]);
+        codRubr_13  := Utils.RemoveZerosEsp(Lista[6]);
+        ideTabRubr_14  := Utils.RemoveZerosEsp(Lista[7]);
+        iniValid_15  := Utils.RemoveZerosEsp(Lista[8]);
+        fimValid_16  := Utils.RemoveZerosEsp(Lista[9]);
+        dscRubr_18  := Utils.RemoveZerosEsp(Lista[10]);
+        natRubr_19  := Utils.RemoveZerosEsp(Lista[11]);
+        tpRubr_20  := Utils.RemoveZerosEsp(Lista[12]);
+        codIncCP_21  := Utils.RemoveZerosEsp(Lista[13]);
+        codIncIRRF_22  := Utils.RemoveZerosEsp(Lista[14]);
+        codIncFGTS_23  := Utils.RemoveZerosEsp(Lista[15]);
+        codIncSIND_24  := Utils.RemoveZerosEsp(Lista[16]);
+        observacao_29  := Utils.RemoveZerosEsp(Lista[17]);
+        tpProc_31 := Utils.RemoveZerosEsp(Lista[18]);
+        nrProc_32 := Utils.RemoveZerosEsp(Lista[19]);
+        extDecisao_33 := Utils.RemoveZerosEsp(Lista[20]);
+        codSusp_34 := Utils.RemoveZerosEsp(Lista[21]);
+        nrProc_36 := Utils.RemoveZerosEsp(Lista[22]);
+        codSusp_37 := Utils.RemoveZerosEsp(Lista[23]);
+        nrProc_39 := Utils.RemoveZerosEsp(Lista[24]);
+        nrProc_42 := Utils.RemoveZerosEsp(Lista[25]);
+        iniValid_44 := Utils.RemoveZerosEsp(Lista[26]);
+        fimValid_45 := Utils.RemoveZerosEsp(Lista[27]);
       end;
       Lista.Free;
     end;

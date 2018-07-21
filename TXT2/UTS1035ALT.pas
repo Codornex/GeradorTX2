@@ -3,7 +3,7 @@ unit UTS1035ALT;
 interface
 
 uses
-  Contnrs, System.Classes;
+  Contnrs, System.Classes, unUtils;
 
 type
   TS1035ALT = class(TObjectList)
@@ -48,7 +48,9 @@ procedure TS1035ALT.GetS1035ALT(const Arq: TStringList);
 var
   I: Integer;
   Lista: TStringList;
+  Utils: TUtils;
 begin
+  Utils := TUtils.Create;
   inherited Clear;
   for I := 0 to Pred(Arq.Count) do
     if Copy(Arq[I],0,Pred(Pos('|',Arq[I]))) = 'S1035'then
@@ -57,20 +59,20 @@ begin
       ExtractStrings(['|'],[],PChar(Arq[I]),Lista);
       with Add do
       begin
-        tpAmb_4 := Lista[1];
-        procEmi_5 := Lista[2];
-        verProc_6 := Lista[3];
-        tpInsc_8 := Lista[4];
-        nrInsc_9 := Lista[5];
-        codCarreira_13 := Lista[6];
-        iniValid_14 := Lista[7];
-        fimValid_15 := Lista[8];
-        dscCarreira_17 := Lista[9];
-        leiCarr_18 := Lista[10];
-        dtLeiCarr_19 := Lista[11];
-        sitCarr_20 := Lista[12];
-        iniValid_21 := Lista[13];
-        fimValid_22 := Lista[14];
+        tpAmb_4 := Utils.RemoveZerosEsp(Lista[1]);
+        procEmi_5 := Utils.RemoveZerosEsp(Lista[2]);
+        verProc_6 := Utils.RemoveZerosEsp(Lista[3]);
+        tpInsc_8 := Utils.RemoveZerosEsp(Lista[4]);
+        nrInsc_9 := Utils.RemoveZerosEsp(Lista[5]);
+        codCarreira_13 := Utils.RemoveZerosEsp(Lista[6]);
+        iniValid_14 := Utils.RemoveZerosEsp(Lista[7]);
+        fimValid_15 := Utils.RemoveZerosEsp(Lista[8]);
+        dscCarreira_17 := Utils.RemoveZerosEsp(Lista[9]);
+        leiCarr_18 := Utils.RemoveZerosEsp(Lista[10]);
+        dtLeiCarr_19 := Utils.RemoveZerosEsp(Lista[11]);
+        sitCarr_20 := Utils.RemoveZerosEsp(Lista[12]);
+        iniValid_21 := Utils.RemoveZerosEsp(Lista[13]);
+        fimValid_22 := Utils.RemoveZerosEsp(Lista[14]);
       end;
       Lista.Free;
     end;
