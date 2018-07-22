@@ -133,10 +133,20 @@ object frmPrincipal: TfrmPrincipal
         'S2210'
         'S2230'
         'S2250'
-        'S2299')
+        'S2299'
+        'S2300'
+        'S2306'
+        'S2399'
+        'S2400'
+        'S3000'
+        'S5002'
+        'S5011'
+        'S5012')
       ParentFont = False
       TabOrder = 0
       OnClick = RGArqTX2Click
+      ExplicitLeft = 3
+      ExplicitTop = -6
     end
     object RGTipoTX2: TRadioGroup
       Left = 0

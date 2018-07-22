@@ -50,6 +50,14 @@ type
     procedure GeraTX2S2230;
     procedure GeraTX2S2250;
     procedure GeraTX2S2299;
+    procedure GeraTX2S2300;
+    procedure GeraTX2S2306;
+    procedure GeraTX2S2399;
+    procedure GeraTX2S2400;
+    procedure GeraTX2S3000;
+    procedure GeraTX2S5002;
+    procedure GeraTX2S5011;
+    procedure GeraTX2S5012;
     procedure sbConfiguracaoClick(Sender: TObject);
     procedure RGArqTX2Click(Sender: TObject);
     procedure SaveTX2(aNameTX2: String);
@@ -73,7 +81,8 @@ implementation
 uses UTS1000, UTS1000ALT, UTS1005, UTS1005ALT, UTS1010, UTS1010ALT, UTS1020, UTS1020ALT,
      UTS1030, UTS1030ALT, UTS1050, UTS1050ALT, UTS2190, UTS2190ALT, UTS2200, UTS2200ALT,
      UTS2205, UTS2250, UTS2299, UTS1035, UTS1035ALT, UTS1040, UTS1040ALT, UTS1060, UTS1060ALT,
-     UTS2206, UTS2210, UTS2230, unConfiguracoes, unMain;
+     UTS2206, UTS2210, UTS2230, unConfiguracoes, unMain, UTS2300, UTS2306,
+  UTS2399, UTS2400, UTS3000, UTS5002, UTS5011, UTS5012;
 
 procedure TfrmPrincipal.sbConfiguracaoClick(Sender: TObject);
 begin
@@ -1447,6 +1456,470 @@ begin
   end;
 end;
 
+procedure TfrmPrincipal.GeraTX2S2300;
+var
+  Lista: TStringList;
+  ArquivoTXT: TStringList;
+  I,J: Integer;
+  S2300: TS2300;
+begin
+  ArquivoTXT := TStringList.Create;
+  ArquivoTXT.LoadFromFile(FLBOrigem.FileName);
+  memoTX2.Lines.Clear;
+  S2300 := TS2300.Create;
+  S2300.GetS2300(ArquivoTXT);
+  for I := 0 to Pred(S2300.Count) do
+  begin
+    memoTX2.Lines.Add('INCLUIRS2300');
+    memoTX2.Lines.Add('indRetif_4='+IntToStr(StrToInt(Trim(S2300.Items[I].indRetif_4))));
+    memoTX2.Lines.Add('nrRecibo_5='+IntToStr(StrToInt(Trim(S2300.Items[I].nrRecibo_5))));
+    memoTX2.Lines.Add('tpAmb_6='+IntToStr(StrToInt(Trim(S2300.Items[I].tpAmb_6))));
+    memoTX2.Lines.Add('procEmi_7='+IntToStr(StrToInt(Trim(S2300.Items[I].procEmi_7))));
+    memoTX2.Lines.Add('verProc_8='+IntToStr(StrToInt(Trim(S2300.Items[I].verProc_8))));
+    memoTX2.Lines.Add('tpInsc_10='+IntToStr(StrToInt(Trim(S2300.Items[I].tpInsc_10))));
+    memoTX2.Lines.Add('nrInsc_11='+IntToStr(StrToInt(Trim(S2300.Items[I].nrInsc_11))));
+    memoTX2.Lines.Add('cpfTrab_13='+IntToStr(StrToInt(Trim(S2300.Items[I].cpfTrab_13))));
+    memoTX2.Lines.Add('nisTrab_14='+IntToStr(StrToInt(Trim(S2300.Items[I].nisTrab_14))));
+    memoTX2.Lines.Add('nmTrab_15='+IntToStr(StrToInt(Trim(S2300.Items[I].nmTrab_15))));
+    memoTX2.Lines.Add('sexo_16='+IntToStr(StrToInt(Trim(S2300.Items[I].sexo_16))));
+    memoTX2.Lines.Add('racaCor_17='+IntToStr(StrToInt(Trim(S2300.Items[I].racaCor_17))));
+    memoTX2.Lines.Add('estCiv_18='+IntToStr(StrToInt(Trim(S2300.Items[I].estCiv_18))));
+    memoTX2.Lines.Add('grauInstr_19='+IntToStr(StrToInt(Trim(S2300.Items[I].grauInstr_19))));
+    memoTX2.Lines.Add('nmSoc_20='+IntToStr(StrToInt(Trim(S2300.Items[I].nmSoc_20))));
+    memoTX2.Lines.Add('dtNascto_22='+IntToStr(StrToInt(Trim(S2300.Items[I].dtNascto_22))));
+    memoTX2.Lines.Add('codMunic_23='+IntToStr(StrToInt(Trim(S2300.Items[I].codMunic_23))));
+    memoTX2.Lines.Add('uf_24='+IntToStr(StrToInt(Trim(S2300.Items[I].uf_24))));
+    memoTX2.Lines.Add('paisNascto_25='+IntToStr(StrToInt(Trim(S2300.Items[I].paisNascto_25))));
+    memoTX2.Lines.Add('paisNac_26='+IntToStr(StrToInt(Trim(S2300.Items[I].paisNac_26))));
+    memoTX2.Lines.Add('nmMae_27='+IntToStr(StrToInt(Trim(S2300.Items[I].nmMae_27))));
+    memoTX2.Lines.Add('nmPai_28='+IntToStr(StrToInt(Trim(S2300.Items[I].nmPai_28))));
+    memoTX2.Lines.Add('nrCtps_31='+IntToStr(StrToInt(Trim(S2300.Items[I].nrCtps_31))));
+    memoTX2.Lines.Add('serieCtps_32='+IntToStr(StrToInt(Trim(S2300.Items[I].serieCtps_32))));
+    memoTX2.Lines.Add('ufCtps_33='+IntToStr(StrToInt(Trim(S2300.Items[I].ufCtps_33))));
+    memoTX2.Lines.Add('nrRic_35='+IntToStr(StrToInt(Trim(S2300.Items[I].nrRic_35))));
+    memoTX2.Lines.Add('orgaoEmissor_36='+IntToStr(StrToInt(Trim(S2300.Items[I].orgaoEmissor_36))));
+    memoTX2.Lines.Add('dtExped_37='+IntToStr(StrToInt(Trim(S2300.Items[I].dtExped_37))));
+    memoTX2.Lines.Add('nrRg_39='+IntToStr(StrToInt(Trim(S2300.Items[I].nrRg_39))));
+    memoTX2.Lines.Add('orgaoEmissor_40='+IntToStr(StrToInt(Trim(S2300.Items[I].orgaoEmissor_40))));
+    memoTX2.Lines.Add('dtExped_41='+IntToStr(StrToInt(Trim(S2300.Items[I].dtExped_41))));
+    memoTX2.Lines.Add('nrRne_43='+IntToStr(StrToInt(Trim(S2300.Items[I].nrRne_43))));
+    memoTX2.Lines.Add('orgaoEmissor_44='+IntToStr(StrToInt(Trim(S2300.Items[I].orgaoEmissor_44))));
+    memoTX2.Lines.Add('dtExped_45='+IntToStr(StrToInt(Trim(S2300.Items[I].dtExped_45))));
+    memoTX2.Lines.Add('nrOc_47='+IntToStr(StrToInt(Trim(S2300.Items[I].nrOc_47))));
+    memoTX2.Lines.Add('orgaoEmissor_48='+IntToStr(StrToInt(Trim(S2300.Items[I].orgaoEmissor_48))));
+    memoTX2.Lines.Add('dtExped_49='+IntToStr(StrToInt(Trim(S2300.Items[I].dtExped_49))));
+    memoTX2.Lines.Add('dtValid_50='+IntToStr(StrToInt(Trim(S2300.Items[I].dtValid_50))));
+    memoTX2.Lines.Add('nrRegCnh_52='+IntToStr(StrToInt(Trim(S2300.Items[I].nrRegCnh_52))));
+    memoTX2.Lines.Add('dtExped_53='+IntToStr(StrToInt(Trim(S2300.Items[I].dtExped_53))));
+    memoTX2.Lines.Add('ufCnh_54='+IntToStr(StrToInt(Trim(S2300.Items[I].ufCnh_54))));
+    memoTX2.Lines.Add('dtValid_55='+IntToStr(StrToInt(Trim(S2300.Items[I].dtValid_55))));
+    memoTX2.Lines.Add('dtPriHab_56='+IntToStr(StrToInt(Trim(S2300.Items[I].dtPriHab_56))));
+    memoTX2.Lines.Add('categoriaCnh_57='+IntToStr(StrToInt(Trim(S2300.Items[I].categoriaCnh_57))));
+    memoTX2.Lines.Add('tpLograd_60='+IntToStr(StrToInt(Trim(S2300.Items[I].tpLograd_60))));
+    memoTX2.Lines.Add('dscLograd_61='+IntToStr(StrToInt(Trim(S2300.Items[I].dscLograd_61))));
+    memoTX2.Lines.Add('nrLograd_62='+IntToStr(StrToInt(Trim(S2300.Items[I].nrLograd_62))));
+    memoTX2.Lines.Add('complemento_63='+IntToStr(StrToInt(Trim(S2300.Items[I].complemento_63))));
+    memoTX2.Lines.Add('bairro_64='+IntToStr(StrToInt(Trim(S2300.Items[I].bairro_64))));
+    memoTX2.Lines.Add('cep_65='+IntToStr(StrToInt(Trim(S2300.Items[I].cep_65))));
+    memoTX2.Lines.Add('codMunic_66='+IntToStr(StrToInt(Trim(S2300.Items[I].codMunic_66))));
+    memoTX2.Lines.Add('uf_67='+IntToStr(StrToInt(Trim(S2300.Items[I].uf_67))));
+    memoTX2.Lines.Add('paisResid_69='+IntToStr(StrToInt(Trim(S2300.Items[I].paisResid_69))));
+    memoTX2.Lines.Add('dscLograd_70='+IntToStr(StrToInt(Trim(S2300.Items[I].dscLograd_70))));
+    memoTX2.Lines.Add('nrLograd_71='+IntToStr(StrToInt(Trim(S2300.Items[I].nrLograd_71))));
+    memoTX2.Lines.Add('complemento_72='+IntToStr(StrToInt(Trim(S2300.Items[I].complemento_72))));
+    memoTX2.Lines.Add('bairro_73='+IntToStr(StrToInt(Trim(S2300.Items[I].bairro_73))));
+    memoTX2.Lines.Add('nmCid_74='+IntToStr(StrToInt(Trim(S2300.Items[I].nmCid_74))));
+    memoTX2.Lines.Add('codPostal_75='+IntToStr(StrToInt(Trim(S2300.Items[I].codPostal_75))));
+    memoTX2.Lines.Add('dtChegada_77='+IntToStr(StrToInt(Trim(S2300.Items[I].dtChegada_77))));
+    memoTX2.Lines.Add('classTrabEstrang_78='+IntToStr(StrToInt(Trim(S2300.Items[I].classTrabEstrang_78))));
+    memoTX2.Lines.Add('casadoBr_79='+IntToStr(StrToInt(Trim(S2300.Items[I].casadoBr_79))));
+    memoTX2.Lines.Add('filhosBr_80='+IntToStr(StrToInt(Trim(S2300.Items[I].filhosBr_80))));
+    memoTX2.Lines.Add('defFisica_82='+IntToStr(StrToInt(Trim(S2300.Items[I].defFisica_82))));
+    memoTX2.Lines.Add('defVisual_83='+IntToStr(StrToInt(Trim(S2300.Items[I].defVisual_83))));
+    memoTX2.Lines.Add('defAuditiva_84='+IntToStr(StrToInt(Trim(S2300.Items[I].defAuditiva_84))));
+    memoTX2.Lines.Add('defMental_85='+IntToStr(StrToInt(Trim(S2300.Items[I].defMental_85))));
+    memoTX2.Lines.Add('defIntelectual_86='+IntToStr(StrToInt(Trim(S2300.Items[I].defIntelectual_86))));
+    memoTX2.Lines.Add('reabReadap_87='+IntToStr(StrToInt(Trim(S2300.Items[I].reabReadap_87))));
+    memoTX2.Lines.Add('observacao_88='+IntToStr(StrToInt(Trim(S2300.Items[I].observacao_88))));
+    memoTX2.Lines.Add('INCLUIRDEPENDENTE_89');
+    memoTX2.Lines.Add('tpDep_90='+IntToStr(StrToInt(Trim(S2300.Items[I].tpDep_90))));
+    memoTX2.Lines.Add('nmDep_91='+IntToStr(StrToInt(Trim(S2300.Items[I].nmDep_91))));
+    memoTX2.Lines.Add('dtNascto_92='+IntToStr(StrToInt(Trim(S2300.Items[I].dtNascto_92))));
+    memoTX2.Lines.Add('cpfDep_93='+IntToStr(StrToInt(Trim(S2300.Items[I].cpfDep_93))));
+    memoTX2.Lines.Add('depIRRF_94='+IntToStr(StrToInt(Trim(S2300.Items[I].depIRRF_94))));
+    memoTX2.Lines.Add('depSF_95='+IntToStr(StrToInt(Trim(S2300.Items[I].depSF_95))));
+    memoTX2.Lines.Add('incTrab_97='+IntToStr(StrToInt(Trim(S2300.Items[I].incTrab_97))));
+    memoTX2.Lines.Add('SALVARDEPENDENTE_89');
+    memoTX2.Lines.Add('fonePrinc_99='+IntToStr(StrToInt(Trim(S2300.Items[I].fonePrinc_99))));
+    memoTX2.Lines.Add('foneAlternat_100='+IntToStr(StrToInt(Trim(S2300.Items[I].foneAlternat_100))));
+    memoTX2.Lines.Add('emailPrinc_101='+IntToStr(StrToInt(Trim(S2300.Items[I].emailPrinc_101))));
+    memoTX2.Lines.Add('emailAlternat_102='+IntToStr(StrToInt(Trim(S2300.Items[I].emailAlternat_102))));
+    memoTX2.Lines.Add('cadIni_164='+IntToStr(StrToInt(Trim(S2300.Items[I].cadIni_164))));
+    memoTX2.Lines.Add('codCateg_104='+IntToStr(StrToInt(Trim(S2300.Items[I].codCateg_104))));
+    memoTX2.Lines.Add('dtInicio_105='+IntToStr(StrToInt(Trim(S2300.Items[I].dtInicio_105))));
+    memoTX2.Lines.Add('natAtividade_106='+IntToStr(StrToInt(Trim(S2300.Items[I].natAtividade_106))));
+    memoTX2.Lines.Add('codCargo_109='+IntToStr(StrToInt(Trim(S2300.Items[I].codCargo_109))));
+    memoTX2.Lines.Add('codFuncao_110='+IntToStr(StrToInt(Trim(S2300.Items[I].codFuncao_110))));
+    memoTX2.Lines.Add('vrSalFx_112='+IntToStr(StrToInt(Trim(S2300.Items[I].vrSalFx_112))));
+    memoTX2.Lines.Add('undSalFixo_113='+IntToStr(StrToInt(Trim(S2300.Items[I].undSalFixo_113))));
+    memoTX2.Lines.Add('dscSalVar_114='+IntToStr(StrToInt(Trim(S2300.Items[I].dscSalVar_114))));
+    memoTX2.Lines.Add('opcFGTS_116='+IntToStr(StrToInt(Trim(S2300.Items[I].opcFGTS_116))));
+    memoTX2.Lines.Add('dtOpcFGTS_117='+IntToStr(StrToInt(Trim(S2300.Items[I].dtOpcFGTS_117))));
+    memoTX2.Lines.Add('categOrig_119='+IntToStr(StrToInt(Trim(S2300.Items[I].categOrig_119))));
+    memoTX2.Lines.Add('cnpjOrigem_120='+IntToStr(StrToInt(Trim(S2300.Items[I].cnpjOrigem_120))));
+    memoTX2.Lines.Add('dtAdmOrig_121='+IntToStr(StrToInt(Trim(S2300.Items[I].dtAdmOrig_121))));
+    memoTX2.Lines.Add('matricOrig_122='+IntToStr(StrToInt(Trim(S2300.Items[I].matricOrig_122))));
+    memoTX2.Lines.Add('categOrig_124='+IntToStr(StrToInt(Trim(S2300.Items[I].categOrig_124))));
+    memoTX2.Lines.Add('cnpjCednt_125='+IntToStr(StrToInt(Trim(S2300.Items[I].cnpjCednt_125))));
+    memoTX2.Lines.Add('matricCed_126='+IntToStr(StrToInt(Trim(S2300.Items[I].matricCed_126))));
+    memoTX2.Lines.Add('dtAdmCed_127='+IntToStr(StrToInt(Trim(S2300.Items[I].dtAdmCed_127))));
+    memoTX2.Lines.Add('tpRegTrab_128='+IntToStr(StrToInt(Trim(S2300.Items[I].tpRegTrab_128))));
+    memoTX2.Lines.Add('tpRegPrev_129='+IntToStr(StrToInt(Trim(S2300.Items[I].tpRegPrev_129))));
+    memoTX2.Lines.Add('infOnus_130='+IntToStr(StrToInt(Trim(S2300.Items[I].infOnus_130))));
+    memoTX2.Lines.Add('natEstagio_132='+IntToStr(StrToInt(Trim(S2300.Items[I].natEstagio_132))));
+    memoTX2.Lines.Add('nivEstagio_133='+IntToStr(StrToInt(Trim(S2300.Items[I].nivEstagio_133))));
+    memoTX2.Lines.Add('areaAtuacao_134='+IntToStr(StrToInt(Trim(S2300.Items[I].areaAtuacao_134))));
+    memoTX2.Lines.Add('nrApol_135='+IntToStr(StrToInt(Trim(S2300.Items[I].nrApol_135))));
+    memoTX2.Lines.Add('vlrBolsa_136='+IntToStr(StrToInt(Trim(S2300.Items[I].vlrBolsa_136))));
+    memoTX2.Lines.Add('dtPrevTerm_137='+IntToStr(StrToInt(Trim(S2300.Items[I].dtPrevTerm_137))));
+    memoTX2.Lines.Add('cnpjInstEnsino_139='+IntToStr(StrToInt(Trim(S2300.Items[I].cnpjInstEnsino_139))));
+    memoTX2.Lines.Add('nmRazao_140='+IntToStr(StrToInt(Trim(S2300.Items[I].nmRazao_140))));
+    memoTX2.Lines.Add('dscLograd_141='+IntToStr(StrToInt(Trim(S2300.Items[I].dscLograd_141))));
+    memoTX2.Lines.Add('nrLograd_142='+IntToStr(StrToInt(Trim(S2300.Items[I].nrLograd_142))));
+    memoTX2.Lines.Add('bairro_143='+IntToStr(StrToInt(Trim(S2300.Items[I].bairro_143))));
+    memoTX2.Lines.Add('cep_144='+IntToStr(StrToInt(Trim(S2300.Items[I].cep_144))));
+    memoTX2.Lines.Add('codMunic_145='+IntToStr(StrToInt(Trim(S2300.Items[I].codMunic_145))));
+    memoTX2.Lines.Add('uf_146='+IntToStr(StrToInt(Trim(S2300.Items[I].uf_146))));
+    memoTX2.Lines.Add('cnpjAgntInteg_148='+IntToStr(StrToInt(Trim(S2300.Items[I].cnpjAgntInteg_148))));
+    memoTX2.Lines.Add('nmRazao_149='+IntToStr(StrToInt(Trim(S2300.Items[I].nmRazao_149))));
+    memoTX2.Lines.Add('dscLograd_150='+IntToStr(StrToInt(Trim(S2300.Items[I].dscLograd_150))));
+    memoTX2.Lines.Add('nrLograd_151='+IntToStr(StrToInt(Trim(S2300.Items[I].nrLograd_151))));
+    memoTX2.Lines.Add('bairro_152='+IntToStr(StrToInt(Trim(S2300.Items[I].bairro_152))));
+    memoTX2.Lines.Add('cep_153='+IntToStr(StrToInt(Trim(S2300.Items[I].cep_153))));
+    memoTX2.Lines.Add('codMunic_154='+IntToStr(StrToInt(Trim(S2300.Items[I].codMunic_154))));
+    memoTX2.Lines.Add('uf_155='+IntToStr(StrToInt(Trim(S2300.Items[I].uf_155))));
+    memoTX2.Lines.Add('cpfSupervisor_157='+IntToStr(StrToInt(Trim(S2300.Items[I].cpfSupervisor_157))));
+    memoTX2.Lines.Add('nmSuperv_158='+IntToStr(StrToInt(Trim(S2300.Items[I].nmSuperv_158))));
+    memoTX2.Lines.Add('dtIniAfast_160='+IntToStr(StrToInt(Trim(S2300.Items[I].dtIniAfast_160))));
+    memoTX2.Lines.Add('codMotAfast_161='+IntToStr(StrToInt(Trim(S2300.Items[I].codMotAfast_161))));
+    memoTX2.Lines.Add('dtTerm_163='+IntToStr(StrToInt(Trim(S2300.Items[I].dtTerm_163))));
+    memoTX2.Lines.Add('SALVARS2300');
+  end;
+end;
+
+procedure TfrmPrincipal.GeraTX2S2306;
+var
+  Lista: TStringList;
+  ArquivoTXT: TStringList;
+  I,J: Integer;
+  S2306: TS2306;
+begin
+  ArquivoTXT := TStringList.Create;
+  ArquivoTXT.LoadFromFile(FLBOrigem.FileName);
+  memoTX2.Lines.Clear;
+  S2306 := TS2306.Create;
+  S2306.GetS2306(ArquivoTXT);
+  for I := 0 to Pred(S2306.Count) do
+  begin
+    memoTX2.Lines.Add('INCLUIRS2306');
+    memoTX2.Lines.Add('indRetif_4='+IntToStr(StrToInt(Trim(S2306.Items[I].indRetif_4))));
+    memoTX2.Lines.Add('nrRecibo_5='+IntToStr(StrToInt(Trim(S2306.Items[I].nrRecibo_5))));
+    memoTX2.Lines.Add('tpAmb_6='+IntToStr(StrToInt(Trim(S2306.Items[I].tpAmb_6))));
+    memoTX2.Lines.Add('procEmi_7='+IntToStr(StrToInt(Trim(S2306.Items[I].procEmi_7))));
+    memoTX2.Lines.Add('verProc_8='+IntToStr(StrToInt(Trim(S2306.Items[I].verProc_8))));
+    memoTX2.Lines.Add('tpInsc_10='+IntToStr(StrToInt(Trim(S2306.Items[I].tpInsc_10))));
+    memoTX2.Lines.Add('nrInsc_11='+IntToStr(StrToInt(Trim(S2306.Items[I].nrInsc_11))));
+    memoTX2.Lines.Add('cpfTrab_13='+IntToStr(StrToInt(Trim(S2306.Items[I].cpfTrab_13))));
+    memoTX2.Lines.Add('nisTrab_14='+IntToStr(StrToInt(Trim(S2306.Items[I].nisTrab_14))));
+    memoTX2.Lines.Add('codCateg_15='+IntToStr(StrToInt(Trim(S2306.Items[I].codCateg_15))));
+    memoTX2.Lines.Add('dtAlteracao_17='+IntToStr(StrToInt(Trim(S2306.Items[I].dtAlteracao_17))));
+    memoTX2.Lines.Add('natAtividade_18='+IntToStr(StrToInt(Trim(S2306.Items[I].natAtividade_18))));
+    memoTX2.Lines.Add('codCargo_21='+IntToStr(StrToInt(Trim(S2306.Items[I].codCargo_21))));
+    memoTX2.Lines.Add('codFuncao_22='+IntToStr(StrToInt(Trim(S2306.Items[I].codFuncao_22))));
+    memoTX2.Lines.Add('vrSalFx_24='+IntToStr(StrToInt(Trim(S2306.Items[I].vrSalFx_24))));
+    memoTX2.Lines.Add('undSalFixo_25='+IntToStr(StrToInt(Trim(S2306.Items[I].undSalFixo_25))));
+    memoTX2.Lines.Add('dscSalVar_26='+IntToStr(StrToInt(Trim(S2306.Items[I].dscSalVar_26))));
+    memoTX2.Lines.Add('natEstagio_28='+IntToStr(StrToInt(Trim(S2306.Items[I].natEstagio_28))));
+    memoTX2.Lines.Add('nivEstagio_29='+IntToStr(StrToInt(Trim(S2306.Items[I].nivEstagio_29))));
+    memoTX2.Lines.Add('areaAtuacao_30='+IntToStr(StrToInt(Trim(S2306.Items[I].areaAtuacao_30))));
+    memoTX2.Lines.Add('nrApol_31='+IntToStr(StrToInt(Trim(S2306.Items[I].nrApol_31))));
+    memoTX2.Lines.Add('vlrBolsa_32='+IntToStr(StrToInt(Trim(S2306.Items[I].vlrBolsa_32))));
+    memoTX2.Lines.Add('dtPrevTerm_33='+IntToStr(StrToInt(Trim(S2306.Items[I].dtPrevTerm_33))));
+    memoTX2.Lines.Add('cnpjInstEnsino_35='+IntToStr(StrToInt(Trim(S2306.Items[I].cnpjInstEnsino_35))));
+    memoTX2.Lines.Add('nmRazao_36='+IntToStr(StrToInt(Trim(S2306.Items[I].nmRazao_36))));
+    memoTX2.Lines.Add('dscLograd_37='+IntToStr(StrToInt(Trim(S2306.Items[I].dscLograd_37))));
+    memoTX2.Lines.Add('nrLograd_38='+IntToStr(StrToInt(Trim(S2306.Items[I].nrLograd_38))));
+    memoTX2.Lines.Add('bairro_39='+IntToStr(StrToInt(Trim(S2306.Items[I].bairro_39))));
+    memoTX2.Lines.Add('cep_40='+IntToStr(StrToInt(Trim(S2306.Items[I].cep_40))));
+    memoTX2.Lines.Add('codMunic_41='+IntToStr(StrToInt(Trim(S2306.Items[I].codMunic_41))));
+    memoTX2.Lines.Add('uf_42='+IntToStr(StrToInt(Trim(S2306.Items[I].uf_42))));
+    memoTX2.Lines.Add('cnpjAgntInteg_44='+IntToStr(StrToInt(Trim(S2306.Items[I].cnpjAgntInteg_44))));
+    memoTX2.Lines.Add('nmRazao_45='+IntToStr(StrToInt(Trim(S2306.Items[I].nmRazao_45))));
+    memoTX2.Lines.Add('dscLograd_46='+IntToStr(StrToInt(Trim(S2306.Items[I].dscLograd_46))));
+    memoTX2.Lines.Add('nrLograd_47='+IntToStr(StrToInt(Trim(S2306.Items[I].nrLograd_47))));
+    memoTX2.Lines.Add('bairro_48='+IntToStr(StrToInt(Trim(S2306.Items[I].bairro_48))));
+    memoTX2.Lines.Add('cep_49='+IntToStr(StrToInt(Trim(S2306.Items[I].cep_49))));
+    memoTX2.Lines.Add('codMunic_50='+IntToStr(StrToInt(Trim(S2306.Items[I].codMunic_50))));
+    memoTX2.Lines.Add('uf_51='+IntToStr(StrToInt(Trim(S2306.Items[I].uf_51))));
+    memoTX2.Lines.Add('cpfSupervisor_53='+IntToStr(StrToInt(Trim(S2306.Items[I].cpfSupervisor_53))));
+    memoTX2.Lines.Add('nmSuperv_54='+IntToStr(StrToInt(Trim(S2306.Items[I].nmSuperv_54))));
+    memoTX2.Lines.Add('SALVARS2306');
+  end;
+end;
+
+procedure TfrmPrincipal.GeraTX2S2399;
+var
+  Lista: TStringList;
+  ArquivoTXT: TStringList;
+  I,J: Integer;
+  S2399: TS2399;
+begin
+  ArquivoTXT := TStringList.Create;
+  ArquivoTXT.LoadFromFile(FLBOrigem.FileName);
+  memoTX2.Lines.Clear;
+  S2399 := TS2399.Create;
+  S2399.GetS2399(ArquivoTXT);
+  for I := 0 to Pred(S2399.Count) do
+  begin
+    memoTX2.Lines.Add('INCLUIRS2399');
+    memoTX2.Lines.Add('indRetif_4='+IntToStr(StrToInt(Trim(S2399.Items[I].indRetif_4))));
+    memoTX2.Lines.Add('nrRecibo_5='+IntToStr(StrToInt(Trim(S2399.Items[I].nrRecibo_5))));
+    memoTX2.Lines.Add('tpAmb_6='+IntToStr(StrToInt(Trim(S2399.Items[I].tpAmb_6))));
+    memoTX2.Lines.Add('procEmi_7='+IntToStr(StrToInt(Trim(S2399.Items[I].procEmi_7))));
+    memoTX2.Lines.Add('verProc_8='+IntToStr(StrToInt(Trim(S2399.Items[I].verProc_8))));
+    memoTX2.Lines.Add('tpInsc_10='+IntToStr(StrToInt(Trim(S2399.Items[I].tpInsc_10))));
+    memoTX2.Lines.Add('nrInsc_11='+IntToStr(StrToInt(Trim(S2399.Items[I].nrInsc_11))));
+    memoTX2.Lines.Add('cpfTrab_13='+IntToStr(StrToInt(Trim(S2399.Items[I].cpfTrab_13))));
+    memoTX2.Lines.Add('nisTrab_14='+IntToStr(StrToInt(Trim(S2399.Items[I].nisTrab_14))));
+    memoTX2.Lines.Add('codCateg_15='+IntToStr(StrToInt(Trim(S2399.Items[I].codCateg_15))));
+    memoTX2.Lines.Add('dtTerm_17='+IntToStr(StrToInt(Trim(S2399.Items[I].dtTerm_17))));
+    memoTX2.Lines.Add('mtvDesligTSV_18='+IntToStr(StrToInt(Trim(S2399.Items[I].mtvDesligTSV_18))));
+    memoTX2.Lines.Add('INCLUIRDMDEV_20');
+    memoTX2.Lines.Add('ideDmDev_21='+IntToStr(StrToInt(Trim(S2399.Items[I].ideDmDev_21))));
+    memoTX2.Lines.Add('INCLUIRIDEESTABLOT_22');
+    memoTX2.Lines.Add('tpInsc_23='+IntToStr(StrToInt(Trim(S2399.Items[I].tpInsc_23))));
+    memoTX2.Lines.Add('nrInsc_24='+IntToStr(StrToInt(Trim(S2399.Items[I].nrInsc_24))));
+    memoTX2.Lines.Add('codLotacao_25='+IntToStr(StrToInt(Trim(S2399.Items[I].codLotacao_25))));
+    memoTX2.Lines.Add('INCLUIRDETVERBAS_26');
+    memoTX2.Lines.Add('codRubr_27='+IntToStr(StrToInt(Trim(S2399.Items[I].codRubr_27))));
+    memoTX2.Lines.Add('ideTabRubr_28='+IntToStr(StrToInt(Trim(S2399.Items[I].ideTabRubr_28))));
+    memoTX2.Lines.Add('qtdRubr_29='+IntToStr(StrToInt(Trim(S2399.Items[I].qtdRubr_29))));
+    memoTX2.Lines.Add('fatorRubr_30='+IntToStr(StrToInt(Trim(S2399.Items[I].fatorRubr_30))));
+    memoTX2.Lines.Add('vrUnit_31='+IntToStr(StrToInt(Trim(S2399.Items[I].vrUnit_31))));
+    memoTX2.Lines.Add('vrRubr_32='+IntToStr(StrToInt(Trim(S2399.Items[I].vrRubr_32))));
+    memoTX2.Lines.Add('SALVARDETVERBAS_26');
+    memoTX2.Lines.Add('INCLUIRDETOPER_34');
+    memoTX2.Lines.Add('cnpjOper_35='+IntToStr(StrToInt(Trim(S2399.Items[I].cnpjOper_35))));
+    memoTX2.Lines.Add('regANS_36='+IntToStr(StrToInt(Trim(S2399.Items[I].regANS_36))));
+    memoTX2.Lines.Add('vrPgTit_37='+IntToStr(StrToInt(Trim(S2399.Items[I].vrPgTit_37))));
+    memoTX2.Lines.Add('INCLUIRDETPLANO_38');
+    memoTX2.Lines.Add('tpDep_60='+IntToStr(StrToInt(Trim(S2399.Items[I].tpDep_60))));
+    memoTX2.Lines.Add('cpfDep_39='+IntToStr(StrToInt(Trim(S2399.Items[I].cpfDep_39))));
+    memoTX2.Lines.Add('nmDep_40='+IntToStr(StrToInt(Trim(S2399.Items[I].nmDep_40))));
+    memoTX2.Lines.Add('dtNascto_41='+IntToStr(StrToInt(Trim(S2399.Items[I].dtNascto_41))));
+    memoTX2.Lines.Add('vlrPgDep_42='+IntToStr(StrToInt(Trim(S2399.Items[I].vlrPgDep_42))));
+    memoTX2.Lines.Add('SALVARDETPLANO_38');
+    memoTX2.Lines.Add('SALVARDETOPER_34');
+    memoTX2.Lines.Add('grauExp_44='+IntToStr(StrToInt(Trim(S2399.Items[I].grauExp_44))));
+    memoTX2.Lines.Add('indSimples_46='+IntToStr(StrToInt(Trim(S2399.Items[I].indSimples_46))));
+    memoTX2.Lines.Add('SALVARIDEESTABLOT_22');
+    memoTX2.Lines.Add('SALVARDMDEV_20');
+    memoTX2.Lines.Add('INCLUIRPROCJUDTRAB_47');
+    memoTX2.Lines.Add('tpTrib_48='+IntToStr(StrToInt(Trim(S2399.Items[I].tpTrib_48))));
+    memoTX2.Lines.Add('nrProcJud_49='+IntToStr(StrToInt(Trim(S2399.Items[I].nrProcJud_49))));
+    memoTX2.Lines.Add('codSusp_50='+IntToStr(StrToInt(Trim(S2399.Items[I].codSusp_50))));
+    memoTX2.Lines.Add('SALVARPROCJUDTRAB_47');
+    memoTX2.Lines.Add('indMV_52='+IntToStr(StrToInt(Trim(S2399.Items[I].indMV_52))));
+    memoTX2.Lines.Add('INCLUIRREMUNOUTREMPR_53');
+    memoTX2.Lines.Add('tpInsc_54='+IntToStr(StrToInt(Trim(S2399.Items[I].tpInsc_54))));
+    memoTX2.Lines.Add('nrInsc_55='+IntToStr(StrToInt(Trim(S2399.Items[I].nrInsc_55))));
+    memoTX2.Lines.Add('codCateg_56='+IntToStr(StrToInt(Trim(S2399.Items[I].codCateg_56))));
+    memoTX2.Lines.Add('vlrRemunOE_57='+IntToStr(StrToInt(Trim(S2399.Items[I].vlrRemunOE_57))));
+    memoTX2.Lines.Add('SALVARREMUNOUTREMPR_53');
+    memoTX2.Lines.Add('dtFimQuar_59='+IntToStr(StrToInt(Trim(S2399.Items[I].dtFimQuar_59))));
+    memoTX2.Lines.Add('SALVARS2399');
+  end;
+end;
+
+procedure TfrmPrincipal.GeraTX2S2400;
+var
+  Lista: TStringList;
+  ArquivoTXT: TStringList;
+  I,J: Integer;
+  S2400: TS2400;
+begin
+  ArquivoTXT := TStringList.Create;
+  ArquivoTXT.LoadFromFile(FLBOrigem.FileName);
+  memoTX2.Lines.Clear;
+  S2400 := TS2400.Create;
+  S2400.GetS2400(ArquivoTXT);
+  for I := 0 to Pred(S2400.Count) do
+  begin
+    memoTX2.Lines.Add('INCLUIRS2400');
+    memoTX2.Lines.Add('indRetif_4='+IntToStr(StrToInt(Trim(S2400.Items[I].indRetif_4))));
+    memoTX2.Lines.Add('nrRecibo_5='+IntToStr(StrToInt(Trim(S2400.Items[I].nrRecibo_5))));
+    memoTX2.Lines.Add('tpAmb_6='+IntToStr(StrToInt(Trim(S2400.Items[I].tpAmb_6))));
+    memoTX2.Lines.Add('procEmi_7='+IntToStr(StrToInt(Trim(S2400.Items[I].procEmi_7))));
+    memoTX2.Lines.Add('verProc_8='+IntToStr(StrToInt(Trim(S2400.Items[I].verProc_8))));
+    memoTX2.Lines.Add('tpInsc_10='+IntToStr(StrToInt(Trim(S2400.Items[I].tpInsc_10))));
+    memoTX2.Lines.Add('nrInsc_11='+IntToStr(StrToInt(Trim(S2400.Items[I].nrInsc_11))));
+    memoTX2.Lines.Add('cpfBenef_13='+IntToStr(StrToInt(Trim(S2400.Items[I].cpfBenef_13))));
+    memoTX2.Lines.Add('nmBenefic_14='+IntToStr(StrToInt(Trim(S2400.Items[I].nmBenefic_14))));
+    memoTX2.Lines.Add('dtNascto_19='+IntToStr(StrToInt(Trim(S2400.Items[I].dtNascto_19))));
+    memoTX2.Lines.Add('codMunic_20='+IntToStr(StrToInt(Trim(S2400.Items[I].codMunic_20))));
+    memoTX2.Lines.Add('uf_21='+IntToStr(StrToInt(Trim(S2400.Items[I].uf_21))));
+    memoTX2.Lines.Add('paisNascto_22='+IntToStr(StrToInt(Trim(S2400.Items[I].paisNascto_22))));
+    memoTX2.Lines.Add('paisNac_23='+IntToStr(StrToInt(Trim(S2400.Items[I].paisNac_23))));
+    memoTX2.Lines.Add('nmMae_24='+IntToStr(StrToInt(Trim(S2400.Items[I].nmMae_24))));
+    memoTX2.Lines.Add('nmPai_25='+IntToStr(StrToInt(Trim(S2400.Items[I].nmPai_25))));
+    memoTX2.Lines.Add('tpLograd_28='+IntToStr(StrToInt(Trim(S2400.Items[I].tpLograd_28))));
+    memoTX2.Lines.Add('dscLograd_29='+IntToStr(StrToInt(Trim(S2400.Items[I].dscLograd_29))));
+    memoTX2.Lines.Add('nrLograd_30='+IntToStr(StrToInt(Trim(S2400.Items[I].nrLograd_30))));
+    memoTX2.Lines.Add('complemento_31='+IntToStr(StrToInt(Trim(S2400.Items[I].complemento_31))));
+    memoTX2.Lines.Add('bairro_32='+IntToStr(StrToInt(Trim(S2400.Items[I].bairro_32))));
+    memoTX2.Lines.Add('cep_33='+IntToStr(StrToInt(Trim(S2400.Items[I].cep_33))));
+    memoTX2.Lines.Add('codMunic_34='+IntToStr(StrToInt(Trim(S2400.Items[I].codMunic_34))));
+    memoTX2.Lines.Add('uf_35='+IntToStr(StrToInt(Trim(S2400.Items[I].uf_35))));
+    memoTX2.Lines.Add('paisResid_37='+IntToStr(StrToInt(Trim(S2400.Items[I].paisResid_37))));
+    memoTX2.Lines.Add('dscLograd_38='+IntToStr(StrToInt(Trim(S2400.Items[I].dscLograd_38))));
+    memoTX2.Lines.Add('nrLograd_39='+IntToStr(StrToInt(Trim(S2400.Items[I].nrLograd_39))));
+    memoTX2.Lines.Add('complemento_40='+IntToStr(StrToInt(Trim(S2400.Items[I].complemento_40))));
+    memoTX2.Lines.Add('bairro_41='+IntToStr(StrToInt(Trim(S2400.Items[I].bairro_41))));
+    memoTX2.Lines.Add('nmCid_42='+IntToStr(StrToInt(Trim(S2400.Items[I].nmCid_42))));
+    memoTX2.Lines.Add('codPostal_43='+IntToStr(StrToInt(Trim(S2400.Items[I].codPostal_43))));
+    memoTX2.Lines.Add('tpPlanRP_45='+IntToStr(StrToInt(Trim(S2400.Items[I].tpPlanRP_45))));
+    memoTX2.Lines.Add('tpBenef_47='+IntToStr(StrToInt(Trim(S2400.Items[I].tpBenef_47))));
+    memoTX2.Lines.Add('nrBenefic_48='+IntToStr(StrToInt(Trim(S2400.Items[I].nrBenefic_48))));
+    memoTX2.Lines.Add('dtIniBenef_49='+IntToStr(StrToInt(Trim(S2400.Items[I].dtIniBenef_49))));
+    memoTX2.Lines.Add('vrBenef_50='+IntToStr(StrToInt(Trim(S2400.Items[I].vrBenef_50))));
+    memoTX2.Lines.Add('idQuota_52='+IntToStr(StrToInt(Trim(S2400.Items[I].idQuota_52))));
+    memoTX2.Lines.Add('cpfInst_53='+IntToStr(StrToInt(Trim(S2400.Items[I].cpfInst_53))));
+    memoTX2.Lines.Add('tpBenef_55='+IntToStr(StrToInt(Trim(S2400.Items[I].tpBenef_55))));
+    memoTX2.Lines.Add('nrBenefic_56='+IntToStr(StrToInt(Trim(S2400.Items[I].nrBenefic_56))));
+    memoTX2.Lines.Add('dtIniBenef_57='+IntToStr(StrToInt(Trim(S2400.Items[I].dtIniBenef_57))));
+    memoTX2.Lines.Add('vrBenef_58='+IntToStr(StrToInt(Trim(S2400.Items[I].vrBenef_58))));
+    memoTX2.Lines.Add('idQuota_60='+IntToStr(StrToInt(Trim(S2400.Items[I].idQuota_60))));
+    memoTX2.Lines.Add('cpfInst_61='+IntToStr(StrToInt(Trim(S2400.Items[I].cpfInst_61))));
+    memoTX2.Lines.Add('tpBenef_63='+IntToStr(StrToInt(Trim(S2400.Items[I].tpBenef_63))));
+    memoTX2.Lines.Add('nrBenefic_64='+IntToStr(StrToInt(Trim(S2400.Items[I].nrBenefic_64))));
+    memoTX2.Lines.Add('dtFimBenef_65='+IntToStr(StrToInt(Trim(S2400.Items[I].dtFimBenef_65))));
+    memoTX2.Lines.Add('mtvFim_66='+IntToStr(StrToInt(Trim(S2400.Items[I].mtvFim_66))));
+    memoTX2.Lines.Add('SALVARS24000');
+  end;
+end;
+
+procedure TfrmPrincipal.GeraTX2S3000;
+var
+  Lista: TStringList;
+  ArquivoTXT: TStringList;
+  I,J: Integer;
+  S3000: TS3000;
+begin
+  ArquivoTXT := TStringList.Create;
+  ArquivoTXT.LoadFromFile(FLBOrigem.FileName);
+  memoTX2.Lines.Clear;
+  S3000 := TS3000.Create;
+  S3000.GetS3000(ArquivoTXT);
+  for I := 0 to Pred(S3000.Count) do
+  begin
+    memoTX2.Lines.Add('INCLUIRS3000');
+    memoTX2.Lines.Add('tpAmb_4='+IntToStr(StrToInt(Trim(S3000.Items[I].tpAmb_4))));
+    memoTX2.Lines.Add('procEmi_5='+IntToStr(StrToInt(Trim(S3000.Items[I].procEmi_5))));
+    memoTX2.Lines.Add('verProc_6='+IntToStr(StrToInt(Trim(S3000.Items[I].verProc_6))));
+    memoTX2.Lines.Add('tpInsc_8='+IntToStr(StrToInt(Trim(S3000.Items[I].tpInsc_8))));
+    memoTX2.Lines.Add('nrInsc_9='+IntToStr(StrToInt(Trim(S3000.Items[I].nrInsc_9))));
+    memoTX2.Lines.Add('tpEvento_11='+IntToStr(StrToInt(Trim(S3000.Items[I].tpEvento_11))));
+    memoTX2.Lines.Add('nrRecEvt_12='+IntToStr(StrToInt(Trim(S3000.Items[I].nrRecEvt_12))));
+    memoTX2.Lines.Add('cpfTrab_14='+IntToStr(StrToInt(Trim(S3000.Items[I].cpfTrab_14))));
+    memoTX2.Lines.Add('nisTrab_15='+IntToStr(StrToInt(Trim(S3000.Items[I].nisTrab_15))));
+    memoTX2.Lines.Add('indApuracao_17='+IntToStr(StrToInt(Trim(S3000.Items[I].indApuracao_17))));
+    memoTX2.Lines.Add('perApur_18='+IntToStr(StrToInt(Trim(S3000.Items[I].perApur_18))));
+    memoTX2.Lines.Add('SALVARS3000');
+  end;
+end;
+
+procedure TfrmPrincipal.GeraTX2S5002;
+var
+  Lista: TStringList;
+  ArquivoTXT: TStringList;
+  I,J: Integer;
+  S5002: TS5002;
+begin
+  ArquivoTXT := TStringList.Create;
+  ArquivoTXT.LoadFromFile(FLBOrigem.FileName);
+  memoTX2.Lines.Clear;
+  S5002 := TS5002.Create;
+  S5002.GetS5002(ArquivoTXT);
+  for I := 0 to Pred(S5002.Count) do
+  begin
+    memoTX2.Lines.Add('INCLUIRS5002');
+    memoTX2.Lines.Add('perApur_5='+IntToStr(StrToInt(Trim(S5002.Items[I].perApur_5))));
+    memoTX2.Lines.Add('tpInsc_7='+IntToStr(StrToInt(Trim(S5002.Items[I].tpInsc_7))));
+    memoTX2.Lines.Add('nrInsc_8='+IntToStr(StrToInt(Trim(S5002.Items[I].nrInsc_8))));
+    memoTX2.Lines.Add('cpfTrab_10='+IntToStr(StrToInt(Trim(S5002.Items[I].cpfTrab_10))));
+    memoTX2.Lines.Add('INCLUIRINFOIRRF_13');
+    memoTX2.Lines.Add('indResBr_15='+IntToStr(StrToInt(Trim(S5002.Items[I].indResBr_15))));
+    memoTX2.Lines.Add('INCLUIRBASESIRRF_16');
+    memoTX2.Lines.Add('tpValor_17='+IntToStr(StrToInt(Trim(S5002.Items[I].tpValor_17))));
+    memoTX2.Lines.Add('valor_18='+IntToStr(StrToInt(Trim(S5002.Items[I].valor_18))));
+    memoTX2.Lines.Add('SALVARBASESIRRF_16');
+    memoTX2.Lines.Add('SALVARINFOIRRF_13');
+    memoTX2.Lines.Add('SALVARS5002');
+  end;
+end;
+
+procedure TfrmPrincipal.GeraTX2S5011;
+var
+  Lista: TStringList;
+  ArquivoTXT: TStringList;
+  I,J: Integer;
+  S5011: TS5011;
+begin
+  ArquivoTXT := TStringList.Create;
+  ArquivoTXT.LoadFromFile(FLBOrigem.FileName);
+  memoTX2.Lines.Clear;
+  S5011 := TS5011.Create;
+  S5011.GetS5011(ArquivoTXT);
+  for I := 0 to Pred(S5011.Count) do
+  begin
+    memoTX2.Lines.Add('INCLUIRS5011');
+    memoTX2.Lines.Add('indApuracao_4='+IntToStr(StrToInt(Trim(S5011.Items[I].indApuracao_4))));
+    memoTX2.Lines.Add('perApur_5='+IntToStr(StrToInt(Trim(S5011.Items[I].perApur_5))));
+    memoTX2.Lines.Add('tpInsc_7='+IntToStr(StrToInt(Trim(S5011.Items[I].tpInsc_7))));
+    memoTX2.Lines.Add('nrInsc_8='+IntToStr(StrToInt(Trim(S5011.Items[I].nrInsc_8))));
+    memoTX2.Lines.Add('indExistInfo_11='+IntToStr(StrToInt(Trim(S5011.Items[I].indExistInfo_11))));
+    memoTX2.Lines.Add('classTrib_16='+IntToStr(StrToInt(Trim(S5011.Items[I].classTrib_16))));
+    memoTX2.Lines.Add('SALVARS5011');
+  end;
+end;
+
+procedure TfrmPrincipal.GeraTX2S5012;
+var
+  Lista: TStringList;
+  ArquivoTXT: TStringList;
+  I,J: Integer;
+  S5012: TS5012;
+begin
+  ArquivoTXT := TStringList.Create;
+  ArquivoTXT.LoadFromFile(FLBOrigem.FileName);
+  memoTX2.Lines.Clear;
+  S5012 := TS5012.Create;
+  S5012.GetS5012(ArquivoTXT);
+  for I := 0 to Pred(S5012.Count) do
+  begin
+    memoTX2.Lines.Add('INCLUIRS5012');
+    memoTX2.Lines.Add('perApur_4='+IntToStr(StrToInt(Trim(S5012.Items[I].perApur_4))));
+    memoTX2.Lines.Add('tpInsc_6='+IntToStr(StrToInt(Trim(S5012.Items[I].tpInsc_6))));
+    memoTX2.Lines.Add('nrInsc_7='+IntToStr(StrToInt(Trim(S5012.Items[I].nrInsc_7))));
+    memoTX2.Lines.Add('indExistInfo_10='+IntToStr(StrToInt(Trim(S5012.Items[I].indExistInfo_10))));
+    memoTX2.Lines.Add('INCLUIRINFOCRCONTRIB_11');
+    memoTX2.Lines.Add('tpCR_12='+IntToStr(StrToInt(Trim(S5012.Items[I].tpCR_12))));
+    memoTX2.Lines.Add('vrCR_13='+IntToStr(StrToInt(Trim(S5012.Items[I].vrCR_13))));
+    memoTX2.Lines.Add('SALVARINFOCRCONTRIB_11');
+    memoTX2.Lines.Add('SALVARS5012');
+  end;
+end;
+
 procedure TfrmPrincipal.RGArqTX2Click(Sender: TObject);
 begin
   if FLBOrigem.FileName = EmptyStr then
@@ -1539,6 +2012,51 @@ begin
      16: begin
            if (RGTipoTX2.ItemIndex=0) then
              GeraTX2S2299 else
+             Application.MessageBox('Não existe arquivo TX2 de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
+         end;
+     17: begin
+           if (RGTipoTX2.ItemIndex=0) then
+             GeraTX2S2205 else
+             Application.MessageBox('Não existe arquivo TX2 de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
+         end;
+     18: begin
+           if (RGTipoTX2.ItemIndex=0) then
+             GeraTX2S2300 else
+             Application.MessageBox('Não existe arquivo TX2 de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
+         end;
+     19: begin
+           if (RGTipoTX2.ItemIndex=0) then
+             GeraTX2S2306 else
+             Application.MessageBox('Não existe arquivo TX2 de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
+         end;
+     20: begin
+           if (RGTipoTX2.ItemIndex=0) then
+             GeraTX2S2399 else
+             Application.MessageBox('Não existe arquivo TX2 de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
+         end;
+     21: begin
+           if (RGTipoTX2.ItemIndex=0) then
+             GeraTX2S2400 else
+             Application.MessageBox('Não existe arquivo TX2 de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
+         end;
+     22: begin
+           if (RGTipoTX2.ItemIndex=0) then
+             GeraTX2S3000 else
+             Application.MessageBox('Não existe arquivo TX2 de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
+         end;
+     23: begin
+           if (RGTipoTX2.ItemIndex=0) then
+             GeraTX2S5002 else
+             Application.MessageBox('Não existe arquivo TX2 de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
+         end;
+     24: begin
+           if (RGTipoTX2.ItemIndex=0) then
+             GeraTX2S5011 else
+             Application.MessageBox('Não existe arquivo TX2 de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
+         end;
+     25: begin
+           if (RGTipoTX2.ItemIndex=0) then
+             GeraTX2S5012 else
              Application.MessageBox('Não existe arquivo TX2 de alteração.','Atenção',MB_OK+MB_ICONINFORMATION);
          end;
     end;
